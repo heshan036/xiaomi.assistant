@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/notice.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>群通知</title>
+</head>
+<body style="padding-top:44px">
+
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>最新公告</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+	
+	<div class="notice_itemInfo">
+		<h2><i class="fillfont icon-gonggao"></i>新年快乐</h2>
+		<p>新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐</p>
+		<time>2017-01-01 15:12:21</time>
+	</div>
+
+	<a class="btn_block"  id="pubmsg-btn"><i class="fillfont icon-pen_1"></i>发表留言</a>
+
+	<div class="noticeinfo_lists">
+		<h3>留言列表</h3>
+		<div class="noticeinfo_item">
+			<div class="noticeinfo_itemImg"><img src="images/pic.png" alt="公告"></div>
+			<div class="noticeinfo_itemCon">
+				<h2>名字</h2>
+				<div class="noticeinfo_itemdetail">大家新年</div>
+				<time>2017-01-20  15:56</time>
+			</div>
+		</div>
+	</div>
+
+	
+
+</body>
+
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$(function(){
+		//发表留言弹窗
+		var txtstr = '<textarea name="" id="" cols="30" rows="6" placeholder="有更好的想法吗？赶紧在此留言吧" style="padding: 10px 1rem;width: 100%;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;"></textarea>';		
+		$("#pubmsg-btn").on("click",function(){
+			layer.open({
+				type:1,
+				title:'发表留言',
+				shadeClose: true, //点击遮罩关闭
+				content: txtstr,
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+					window.location.href='notice_chose.html'
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+		})
+	})
+
+</script>
+
+</html>

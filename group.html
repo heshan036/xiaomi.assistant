@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/group.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/group.js"></script>
+	<title>群成员</title>
+	<style>
+		body{padding-bottom: 72px}
+	</style>
+</head>
+<body style="padding-bottom:72px">
+	<header class="group_header">
+		<div class="member_photo">
+			<img src="images/pic.png">
+		</div>
+		<div class="member_info">
+			<h2><i class="fillfont icon-iconfont-xiugaitouxiang-"></i>我的名字</h2>
+			<p>这家伙很神（lan）秘（duo）~</p>
+		</div>
+		<a class="btn_orange" onclick="manage();" id="manage">管理</a>
+		<a class="btn_orange none" onclick="concelM();" id="concelM">取消</a>
+		<a class="btn_orange none" onclick="sureM();" id="sureM" style="right:5.4rem">确定</a>
+	</header>
+	<div class="content">
+		<div class="search">
+			<a href="javascript:"><i class="fillfont icon-search"></i></a>
+			<input type="text" placeholder="请输入关键词">
+		</div>
+		<div class="table_group">
+			<ul class="table_groupth table_line">
+				<li><!-- <input type="checkbox" name="tr_all" id="choseAll"> --></li>
+				<li>姓名</li>
+				<li>个性签名</li>
+				<li>日发言数<img src="images/down.png" alt=""></li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><p>名名字名字名字名字名字字</p><i class="fillfont icon-qunzhu qunzhu"></i></li>
+				<li>暂时还未完善个性签名</li>
+				<li>0</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><p>名字</p><i class="fillfont icon-guanli qunzhu"></i></li>
+				<li>暂时还未完善个性签名</li>
+				<li>0</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><p>名名字名字名字名字名字字</p><i class="fillfont icon-qunzhu qunzhu"></i></li>
+				<li>暂时还未完善个性签名</li>
+				<li>0</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><p>名字</p><i class="fillfont icon-guanli qunzhu"></i></li>
+				<li>暂时还未完善个性签名</li>
+				<li>0</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><p>名名字名字名字名字名字字</p><i class="fillfont icon-qunzhu qunzhu"></i></li>
+				<li>暂时还未完善个性签名</li>
+				<li>0</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><p>名字</p><i class="fillfont icon-guanli qunzhu"></i></li>
+				<li>暂时还未完善个性签名</li>
+				<li>0</li>
+			</ul>
+			<p class="tc c-blue p10" id="loadMore">点击加载更多...</p>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="footer_home" class="footer_home active" onclick="window.location.href='index.html'">
+			<p><i class="fillfont icon-home"></i></p>
+		</div>
+		<ul>
+			<li class="active">
+				<i class="fillfont icon-group"></i>
+				<p>群成员</p>
+			</li>
+			<li onclick="window.location.href='mine.html'">
+				<i class="fillfont icon-user"></i>
+				<p>我的</p>
+			</li>
+		</ul>
+	</footer>
+
+	<!--发起群通知弹窗  -->
+	<div class="pupbox none" id="btnTypes">
+		<ul>
+			<li><label><input type="radio" name="btnType" checked>设为群管</label></li>
+			<li><label><input type="radio" name="btnType">取消群管</label></li>
+			<li><label><input type="radio" name="btnType">踢人出群</label></li>
+		</ul>
+	</div>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	function manage(){
+		layer.open({
+				type:1,
+				title:false,
+				shadeClose: true, //点击遮罩关闭
+				content: $("#btnTypes"),
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+					layer.close(index)
+					$("#concelM").show();
+					$("#sureM").show();
+					$("#manage").hide();
+					$(".table_line li:first-child").show()
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+	}
+
+	function concelM(){
+		$("#concelM").hide();
+		$("#sureM").hide();
+		$("#manage").show();
+		$(".table_line li:first-child").hide()
+	}
+
+	$(window).scroll(function(){
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			console.log(scrollTop +','+scrollHeight+','+windowHeight)
+			console.log(scrollHeight - 36)
+			if (scrollTop + windowHeight > scrollHeight - 36) {
+				// 此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+				$("#loadMore").html('加载中...')
+				console.log(12)
+			}
+	});
+</script>
+</html>

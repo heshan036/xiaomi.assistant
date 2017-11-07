@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/index.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ec79762a76684ec08a37fccbc4b747b3"></script>  
+	<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+	<title>群地图</title>
+</head>
+<body>
+<div id="map"></div>
+</body>
+<script>
+$(function(){
+	$("#map").width(window.screen.width);
+	$("#map").height(window.screen.height);
+	navigator.geolocation.getCurrentPosition(translatePoint,locationError); //定位
+	});
+function translatePoint(position){
+	var currentLat = position.coords.latitude;
+	var currentLon = position.coords.longitude;
+	var gpsPoint = new BMap.Point(currentLon, currentLat);
+	BMap.Convertor.translate(gpsPoint, 0, initMap); //转换坐标
+}
+function initMap(point){
+	//初始化地图
+	map = new BMap.Map("map");
+	map.addControl(new BMap.NavigationControl());
+	map.addControl(new BMap.ScaleControl());
+	map.addControl(new BMap.OverviewMapControl());
+	map.centerAndZoom(point, 15);
+	map.addOverlay(new BMap.Marker(point))
+}
+
+ // 定位失败时，执行的函数  
+function locationError(error) {  
+    switch (error.code) {  
+        case error.PERMISSION_DENIED:  
+            alert("User denied the request for Geolocation.");  
+            break;  
+        case error.POSITION_UNAVAILABLE:  
+            alert("Location information is unavailable.");  
+            break;  
+        case error.TIMEOUT:  
+            alert("The request to get user location timed out.");  
+            break;  
+        case error.UNKNOWN_ERROR:  
+            alert("An unknown error occurred.");  
+            break;  
+    }  
+}  
+</script>
+</html>

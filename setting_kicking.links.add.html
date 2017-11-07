@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+</head>
+<body class="pt pb">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>添加链接</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="form_whiteline">
+		<p>链接加入群ID<i class="fillfont icon-icon-question"></i></p>
+		<input type="checkbox" class="switch">
+	</div>
+	
+	<div class="tab_main linksList">
+		<ul class="tabT flex_2">
+			<li class="active">群链接列表</li>
+			<li>群文件列表</li>
+		</ul>
+		<div class="tabC">
+			<section class="h2-sec">
+				<h2>设置链接方式</h2>
+				<div class="linksListCon">
+					<p>1、群主将链接分享给本群小管家</p>
+					<p>2、在群内发送连接后，进入空间点击“获取最新链接”系统将显示群内最新的5条链接</p>
+					<p class="c-r3">注：以下情况，链接将不能被记录：<br>1、用PC版微信分享链接给小管家<br>2、页面未加载或分享给小管家</p>					
+				</div>
+				<h2>群链接列表 <a class="fr c-blue" style="font-size:12px" onclick="getLinks();"><i class="linefont icon-link mr5"></i>获取新链接</a></h2>
+				<div class="linksListCon">
+					<label class="linkItem">
+						<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+						<input type="checkbox" name="linkItem">
+					</label>
+					<label class="linkItem">
+						<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+						<input type="checkbox" name="linkItem">
+					</label>
+					<label class="linkItem">
+						<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+						<input type="checkbox" name="linkItem">
+					</label>
+				</div>
+				<footer class="footer_btn flexBox flex_2">
+					<a class="btn_white" style="color:#666">全选</a>
+					<a class="btn_blue"><i class="fillfont icon-baocun mr5"></i>保存</a>
+					<a class="btn_red"><i class="fillfont icon-lajitong mr5" style="font-size:20px"></i>删除</a>
+				</footer>
+			</section>
+			<section class="h2-sec none">
+				<h2>设置群文件方式</h2>
+				<div class="linksListCon">
+					<p>1、群主将文件分享给本群小管家</p>			
+				</div>
+				<h2>群链接列表</h2>
+				<div class="linksListCon">
+					<label class="linkItem">
+						<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>小蜜助手工程项目</h3></figcaption></figure>
+						<input type="checkbox" name="linkItem">
+					</label>
+				</div>
+				<footer class="footer_btn flexBox flex_2">
+					<a class="btn_white" style="color:#666">全选</a>
+					<a class="btn_blue"><i class="fillfont icon-baocun mr5"></i>保存</a>
+				</footer>
+			</section>
+		</div>
+	</div>
+	
+	<div id="getLinks" class="none">
+		<label class="linkItem">
+			<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+			<input type="checkbox" name="getlinkItem">
+		</label>
+		<label class="linkItem">
+			<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+			<input type="checkbox" name="getlinkItem">
+		</label>
+	</div>
+
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	function delItem(obj){
+		layer.confirm('确定删除本条链接？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(){
+		  layer.msg('删除成功', {icon: 1});
+		}, function(){
+			//取消
+		});
+	}
+
+	$(function(){
+		$(".linksList .tabT li").click(function(){
+			$(this).addClass('active').siblings().removeClass("active");
+			$(this).parents(".linksList").find(".tabC > .h2-sec:eq("+$(this).index()+")").show().siblings().hide()
+		})
+	})
+
+	function getLinks(){
+		layer.open({
+			type:1,
+			title:'获取链接',
+			shadeClose: true, //点击遮罩关闭
+			content: $("#getLinks"),
+			btn:['确定','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				console.log("取消")
+			}
+		})
+	}
+</script>
+</html>

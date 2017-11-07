@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/essence.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>群精华</title>
+</head>
+<body>
+
+	<header class="essence_header">
+		<p><i class="fillfont icon-volume_"></i>今日新增群精华条数： <span>2</span> </p>
+<!-- 		<a id="public-Btn" onclick="pop(this);">发起群通知</a> -->
+		<a id="chose-Btn" href="essence_chose.html">获取群精华 <i class="linefont icon-arrowright"></i></a>
+	</header>
+
+	<div class="search" style="margin:10px 1rem">
+		<a href="javascript:"><i class="fillfont icon-search"></i></a>
+		<input type="text" placeholder="请输入关键词">
+	</div>
+	
+	<div class="essenceList">
+		<div class="essenceItem">
+			<img src="images/essence_default.png" alt="公告">
+			<div class="essence_itemCon">
+				<h2> 2017-01-20 15:56:12<br><small class="c-blue">至</small> 2017-01-20 16:25:14 </h2>
+				<div class="essence_itemdetail link" onclick="window.location.href='essence_info.html'"><i class="linefont icon-iconfontyouhuiquan"></i>群聊精华</div>
+				<time>2017-01-20  15:56</time>
+				<a href="#">未发布</a>
+			</div>
+		</div>
+		<div class="essenceItem">
+			<img src="images/essence_default.png" alt="公告">
+			<div class="essence_itemCon">
+				<h2> 2017-01-20 15:56:12<br><small class="c-blue">至</small> 2017-01-20 16:25:14 </h2>
+				<div class="essence_itemdetail link" onclick="window.location.href='essence_info.html'"><i class="linefont icon-iconfontyouhuiquan"></i>群聊精华</div>
+				<time>2017-01-20  15:56</time>
+				<a href="#" class="disabled">已发布</a>
+			</div>
+		</div>
+		<div class="essenceItem">
+			<img src="images/essence_default.png" alt="公告">
+			<div class="essence_itemCon">
+				<h2> 2017-01-20 15:56:12<br><small class="c-blue">至</small> 2017-01-20 16:25:14 </h2>
+				<div class="essence_itemdetail link" onclick="window.location.href='essence_info.html'"><i class="linefont icon-iconfontyouhuiquan"></i>群聊精华</div>
+				<time>2017-01-20  15:56</time>
+				<a href="#" class="disabled">已发布</a>
+			</div>
+		</div>
+		<div class="essenceItem">
+			<img src="images/essence_default.png" alt="公告">
+			<div class="essence_itemCon">
+				<h2> 2017-01-20 15:56:12<br><small class="c-blue">至</small> 2017-01-20 16:25:14 </h2>
+				<div class="essence_itemdetail link" onclick="window.location.href='essence_info.html'"><i class="linefont icon-iconfontyouhuiquan"></i>群聊精华</div>
+				<time>2017-01-20  15:56</time>
+				<a href="#" class="disabled">已发布</a>
+			</div>
+		</div>
+		<p class="tc c-blue p10" id="loadMore">点击加载更多...</a>
+	</div>
+
+
+	<footer class="footer">
+		<div class="footer_home active" onclick="window.location.href='index.html'">
+			<p><i class="fillfont icon-home"></i></p>
+		</div>
+		<ul>
+			<li onclick="window.location.href='group.html'">
+				<i class="fillfont icon-group"></i>
+				<p>群成员</p>
+			</li>
+			<li onclick="window.location.href='mine.html'">
+				<i class="fillfont icon-user"></i>
+				<p>我的</p>
+			</li>
+		</ul>
+	</footer>
+
+
+</body>
+<script>
+	$(window).scroll(function(){
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			if (scrollTop + windowHeight == scrollHeight) {
+				// 此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+				$("#loadMore").html('请耐心等待,加载中...')
+			}
+	});
+</script>
+</html>

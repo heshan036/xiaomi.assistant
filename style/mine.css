@@ -1,0 +1,78 @@
+.mine_header{
+	width: 100%;
+	padding:15px 0;
+	background: #f29c2d;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-ms-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	text-align: center;
+	color: #fff
+}
+.portrait{width: 68px;height: 68px;border-radius: 50%;border:3px solid rgba(255,255,255,0.48);overflow: hidden;margin: 0 auto;box-sizing: border-box;-webkit-box-sizing: border-box;-o-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;}
+.portrait img{width: 100%;height: 100%}
+.mine_header h2{font-size: 1.8rem;margin-top: 3px }
+.mine_header h3{font-size: 1.4rem;;color: #e4f9fe}
+
+.mine_con{margin-top: 16px;background: #fff;display: flex;flex: row;}
+.mine_con li{height: 64px;line-height: 64px;padding: 0 1rem;color: #333;border-right: 1px solid #e5e5e5;font-size: 1.6rem;position: relative;flex: 50%}
+.mine_con li:nth-child(2n){border-right: none;}
+.mine_con li > span{width: 32px;overflow: hidden;display: inline-block;vertical-align: middle;height: 100%;text-align: center;margin-right: 5px;}
+.mine_con li i{font-size: 2.7rem}
+
+.mine_tabMain {background: #fff;padding-bottom: 8px}
+.mine_tabMain , .mine_tabC{margin: 0}
+.mine_tabT {display: flex;flex-direction: row;justify-content: space-between;align-items: center;height: 40px;line-height: 40px;font-size: 1.4rem;background: #fff}
+.mine_tabT li {width: 50%;text-align: center;color: #212121;position: relative;border-bottom: 1px solid #dcdcdc}
+.mine_tabT li.active{color: #00abd8;border-bottom: 1px solid #00abd8}
+.mine_tabC .search input{background: #eee}
+.mine_tabC .search{background: #eee;margin: 8px 1rem;}
+.mineGroup-item{display: flex;flex-direction: row;padding: 8px 1rem;position: relative;border-top: 1px solid #e5e5e5}
+.mineGroup-item figure,.buyItem figure{flex: 4;display: flex;flex-direction: row;align-items: center;overflow: hidden;}
+.mineGroup-item figure > img{width: 40px;height: 40px;border-radius: 50%;}
+.mineGroup-item figure > figcaption,.buyItem figure>figcaption{margin-left: 8px;overflow: hidden;}
+.mineGroup-item figure h3{color: #333;font-size:1.4rem;overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;}
+.mineGroup-item figure p{color: #a0a0a0;font-size:1.2rem;}
+.mineGroup-item > a{flex: 1;text-align: right}
+.mineGroup-item > a i{font-size: 3.6rem;color: #0891db}
+
+
+
+.feedBack-con , .buy-con{margin-top: 60px;}
+.feedBack-item{height: 40px;line-height: 40px;background: #fff;padding: 0 1rem;margin-bottom: 16px}
+
+.buyItem{
+	margin: 0 1rem 16px 1rem;
+	padding:8px 10px;
+	position:relative;
+	color:#fff;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 3px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	background: #ee4c33
+}
+.buy-con .buyItem:nth-child(2n){background: #00b0f0}
+.buyItem figure h3{font-size: 1.6rem;border-left:1px solid #fff;padding-left: 8px}
+.buyItem figure > img{width: 32px;height: 32px;border-radius: 50%;border:2px solid rgba(255,255,255,0.6);}
+.buyItem > a{flex: 1;text-align: right;color: #fff;font-size: 1.4rem}
+
+
+
+
+
+
+
+
+
+
+
+

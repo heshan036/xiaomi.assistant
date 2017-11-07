@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/steward.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群管家</title>
+</head>
+<body class="pt pb">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>定时提醒</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<section class="h2-sec">
+		<h2>我的提醒</h2>
+		<div class="flexBox remindItem">
+			<input type="checkbox" name="remindItem">
+			<section class="remindItemcon" onclick="window.location.href='steward-regularRemind.add.html'">
+				<h3><i class="fillfont icon-meng mr5 c-r1"></i>16:52<small>哈哈哈</small></h3>
+				<p>2017-5-19</p>
+			</section>
+			<input type="checkbox" class="switch">
+		</div>
+		<div class="flexBox remindItem">
+			<input type="checkbox" name="remindItem">
+			<section class="remindItemcon" onclick="window.location.href='steward-regularRemind.add.html'">
+				<h3>16:52<small>提醒</small></h3>
+				<p><span>周一</span><span>周二</span><span>周三</span><span>周一</span></p>
+			</section>
+			<input type="checkbox" class="switch" >
+		</div>
+	</section>
+
+	<footer class="footer_btn flexBox flex_2">
+		<a class="btn_white" style="color:#666" id="choseAll">全选</a>
+		<a><i class="fillfont icon-lajitong mr5" style="font-size:18px"></i>删除</a>
+		<a href="steward-regularRemind.add.html" class="btn_red"><i class="fillfont icon-tianjiatixing mr5"></i>添加提醒</a>
+	</footer>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$("#choseAll").click(function(){
+		var _this=$(this)
+		if(_this.text() == '全选'){
+			$("input[name='remindItem']").prop("checked","checked");
+			_this.text("取消")
+		}else{
+			_this.text("全选");
+			$("input[name='remindItem']").removeProp("checked")
+		}
+	})
+</script>
+</html>

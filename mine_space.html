@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/mine.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>我的空间</title>
+</head>
+<body class="pt pb">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>我的空间</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<section class="admin_top2">
+		<img src="images/pic.png">
+		<figcaption>
+			<h3>大爱淘沙</h3>
+			<a href="buyPage_update.html" class="update">空间升级</a>
+		</figcaption>
+	</section>
+
+	<div class="form_whiteline">未开通群个数：<span class="c-r3">1</span><a class="line_chosebtn" href="buyOpenList.html"><i class="linefont icon-arrowright"></i></a></div>
+
+	<div class="mine_tabMain" style="margin-top:16px">
+		<ul class="mine_tabT">
+			<li class="active">我开通的群</li>
+			<li>我参与的群</li>
+		</ul>
+		<div class="mine_tabC">
+			<div class="panel">
+				<div class="search">
+					<a href="javascript:"><i class="fillfont icon-search"></i></a>
+					<input type="text" placeholder="请输入关键词">
+				</div>
+				<div class="mineGroup-item">
+					<figure>
+						<img src="images/pic.png">
+						<figcaption>
+							<h3>小蜜助小蜜助手小蜜助手小蜜助手小蜜助手小蜜助手小蜜助手手</h3>
+							<p>开通日期：<span>2017-01-01</span></p>
+						</figcaption>
+					</figure>
+					<a href="group.html"><i class="fillfont icon-daguimo"></i></a>
+				</div>
+			</div>
+			<div class="panel none">
+				<div class="search">
+					<a href="javascript:"><i class="fillfont icon-search"></i></a>
+					<input type="text" placeholder="请输入关键词">
+				</div>
+				<div class="mineGroup-item">
+					<figure>
+						<img src="images/pic.png">
+						<figcaption>
+							<h3>小蜜助手</h3>
+							<p>开通日期：<span>2017-01-01</span></p>
+						</figcaption>
+					</figure>
+					<a href="group.html"><i class="fillfont icon-daguimo"></i></a>
+				</div>
+				<div class="mineGroup-item">
+					<figure>
+						<img src="images/pic.png">
+						<figcaption>
+							<h3>小智</h3>
+							<p>开通日期：<span>2017-01-01</span></p>
+						</figcaption>
+					</figure>
+					<a href="group.html"><i class="fillfont icon-iconfont-guanyuwomen-"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer_btn2 flex_2">
+		<a href="buyPage.html" style="background:#f2572d;color:#fff;font-size:1.4rem">购买小蜜助手</a>
+		<a href="buyPage.html" style="background:#00abd8;color:#fff;font-size:1.4rem">购买社群联盟</a>
+	</footer>
+
+</body>
+<script>
+	$(function(){
+		$(".mine_tabT li").click(function(){
+			var ind=$(this).index();
+			$(this).addClass("active").siblings().removeClass("active");
+			$(this).parent(".mine_tabT").siblings(".mine_tabC").find(".panel:eq("+$(this).index()+")").show().siblings().hide()
+		})
+	})
+</script>
+</html>

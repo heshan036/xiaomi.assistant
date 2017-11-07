@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/union.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>联盟管理</title>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>联盟管理</h1>
+		<a href="union_question.html" class="right_btn"><i class="fillfont icon-icon-question"></i>功能说明</a>
+	</header>
+	
+	<figure class="admin_top">
+		<img src="images/pic.png">
+		<figcaption>
+			<h3><i class="fillfont icon-daguimo"></i>社群最新</h3>
+		</figcaption>
+	</figure>
+	
+	<section class="h2-sec">
+		<h2>联盟群<a href="union.inviteLink.html" class="fr" style="font-size:12px;color:#00b0f0">邀请链接<i class="fillfont icon-arrow_right" style="color:#00b0f0"></i></a></h2>
+		<div class="admin_groups">
+			<figure  onclick="window.location.href='union_adminGroup.html'">
+				<img src="images/pic.png">
+				<figcaption>
+					<h3><span class="admin_mainGroup">主群</span>社群社群</h3>
+				</figcaption>
+			</figure>
+			<figure onclick="window.location.href='union_adminGroup.html'">
+				<img src="images/pic.png">
+				<figcaption>
+					<h3>社群社群</h3>
+				</figcaption>
+			</figure>
+			<figure onclick="window.location.href='union_adminGroup.html'">
+				<img src="images/pic.png">
+				<figcaption>
+					<h3>社群社群</h3>
+				</figcaption>
+			</figure>
+			<p class="tc c-blue p10" id="loadMore">点击加载更多...</p>
+		</div>
+	</section>
+
+</body>
+    <script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	//展开联盟信息
+	function folderBox(obj){
+		var _this=$(obj);
+		_this.find('a').toggleClass('rotate');
+		_this.siblings('.unionList').toggle()
+	}
+
+	//打开联盟详情
+	function openunionInfo(obj){
+		layer.open({
+			type:1,
+			title:'联盟详情',
+			content:$("#unionInfoLayer"),
+			id:'unionInfoLayer-wrapper'
+		})
+	}
+
+	//退出联盟
+	function exitUnion(obj){
+		layer.msg('退出成功',{icon:1,time:2000})
+	}
+
+	//申请加入联盟
+	function enterUnion(obj){
+		var str = '<textarea placeholder=\"请输入验证消息\" autofocus></textarea>'
+		layer.open({
+			type:1,
+			title:'请输入申请消息',
+			content:str,
+			scrollbar:false,
+			shadeClose: true, //点击遮罩关闭
+			btn:['申请加入'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			}
+		})
+	}
+
+	$(window).scroll(function(){
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			if (scrollTop + windowHeight == scrollHeight) {
+				// 此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+				$("#loadMore").html('加载中...')
+				console.log(12)
+			}
+	});
+</script>
+</html>

@@ -1,0 +1,18 @@
+/*购买页面*/
+.newBuyCon ul{margin-bottom: 16px}
+.newBuyCon .sec-tag i{font-size:24px;color:#e45454;vertical-align: -2px;}
+.newBuyCon ul li:last-child{border-bottom: none}
+.newBuyCon li{margin-top: 0;border-bottom:1px solid #e5e5e5;}
+
+.openList{margin: 0 1rem 10px;background: #fff;border-radius: 5px;overflow: hidden;border:1px solid #e5e5e5;}
+.openList h3{background: #f3f3f3;padding: 10px 1rem;color: #333;font-size: 14px}
+.openList h3 > a.btn_blue{float: right;padding: 2px 10px;border-radius: 3px;font-size: 13px}
+.openCon li{padding: 10px 1rem;border-top:1px solid #e5e5e5;font-size: 13px}
+.openCon .spanGray{display: inline-block;}
+
+.openInfo{background: #fff;}
+.openInfo li{display: flex;flex-direction: row;padding:10px 1rem;align-items: center;}
+.openInfo h2{color: #333;font-size: 14px;margin-right: 5px;width:88px;text-align: right;}
+.openInfo p{flex: 1;font-size: 13px;}
+.openInfo .portraitCircle{vertical-align: middle;}
+.openInfo  time{color: #a0a0a0}

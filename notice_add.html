@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/notice.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>群通知</title>
+</head>
+<body style="padding-top:44px">
+
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>发布群规</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="form_brline">
+		<label for="">群规标题<small>最多30个字</small></label>
+		<input type="text" placeholder="设置好的标题能获得更多的关注">
+	</div>
+
+	<div class="form_brline">
+		<label for="">群规内容<small>最多1500个字</small></label>
+		<textarea name="" id=""  rows="5" placeholder="请输入群规内容"></textarea>
+	</div>
+	<div class="form_whiteline"><span>设置浏览群规奖励<i class="fillfont icon-icon-question"></i></span><a class="line_chosebtn" id="viewrule-btn"><span></span><i class="linefont icon-arrowright"></i></a></div>
+
+	<div class="form_whiteline"><span>置顶该内容<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+	<div class="form_whiteline"><span>向群内发布新内容链接通知<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+	<div class="form_whiteline"><span>@所有人<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+	<div class="form_whiteline"><span>全联盟可见<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+
+
+	<a href="#" class="btn_block">发布</a>
+
+	<div class="pupbox none" id="setwardPup">
+		<p>开启金币奖励，系统将根据浏览人数从钱包中扣除相应金币数，开启联盟可见后，联盟成员将享受与本群相同金币奖励，系统将根据点赞人数从群钱包中扣除相应金币数，金币余额不足时，自动关闭奖励。</p>
+		<div class="set_award">
+			<h3>点赞奖励：</h3>
+			<div class="set_awardIn">
+				<p>每人<input type="text" value="1">个金币</p>
+				<p>金币余额：<span>0</span>；可用金币：<span>0</span></p>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$(function(){
+		//设置浏览群规奖励弹窗		
+		$("#viewrule-btn").on("click",function(){
+			layer.open({
+				type:1,
+				title:'浏览群规奖励',
+				shadeClose: true, //点击遮罩关闭
+				content: $('#setwardPup'),
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+					window.location.href='notice_chose.html'
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+		})
+	})
+
+</script>
+</html>

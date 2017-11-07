@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/dynamic.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>群动态</title>
+</head>
+<body>
+
+	<header class="dynamic_header">
+		<p><i class="fillfont icon-volume_"></i>今日新增群动态 <span>2</span> 条</p>
+		<a href="dynamic_add.html">发布</a>
+		<a href="dynamic_chose.html">筛选 <i class="linefont icon-arrowright"></i></a>
+	</header>
+
+	<div class="dynamic_lists">
+		<div class="dynamic_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="dynamic_itemFl">
+				<div class="dynamic_itemCon">
+					<h2>动态1</h2>
+					<div class="dynamic_itemdetail">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐</div>
+					<p class="dynamic_itemConB"><time>2017-01-20  15:56</time><a class="item_commentbtn" onclick="itemComment(this);"><i class="fillfont icon-pinglun"></i></a></p>
+					<a href="#" class="item_knowbtn">我知道了</a>				
+				</div>
+				<div class="dynamic_itemcomment">
+					<ul class="dynamic_itemLike clearfix"><li><i class='linefont icon-dianzan'></i><b>姓名</b></li><li><i class='linefont icon-dianzan'></i><b>姓名</b></li></ul>
+					<ul class="dynamic_itemcomm">
+						<li><b>姓名:</b><span>新年快乐新年快乐新年快乐新年快乐新年快乐</span></li>
+						<li><b>姓名:</b><span>新年快乐</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="dynamic_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="dynamic_itemFl">
+				<div class="dynamic_itemCon">
+					<h2>动态2</h2>
+					<div class="dynamic_itemdetail link">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年</div>
+					<p class="dynamic_itemConB"><time>2017-01-20  15:56</time><a class="item_commentbtn" onclick="itemComment(this);"><i class="fillfont icon-pinglun"></i></a></p>
+					<a href="#" class="item_knowbtn disabled">我知道了</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<footer class="footer">
+		<div class="footer_home active" onclick="window.location.href='index.html'">
+			<p><i class="fillfont icon-home"></i></p>
+		</div>
+		<ul>
+			<li onclick="window.location.href='group.html'">
+				<i class="fillfont icon-group"></i>
+				<p>群成员</p>
+			</li>
+			<li onclick="window.location.href='mine.html'">
+				<i class="fillfont icon-user"></i>
+				<p>我的</p>
+			</li>
+		</ul>
+	</footer>
+
+</body>
+<script>
+$(function(){
+
+})
+	function itemComment(obj){
+		var str;
+		str="<div class='item_commentPup' style='position: absolute;z-index: 1001;bottom:0;right: 2rem;background: #333;border-radius: 3px;padding: 3px 10px;color: #fff;'><a style='margin-right:10px'><i class='linefont icon-dianzan' style='margin-right:5px'></i>点赞</a><a><i class='linefont icon-comments' style='margin-right:5px'></i>评论</a></div>";
+		if($(obj).siblings(".item_commentPup").length < 1){
+			$(obj).parents(".dynamic_itemConB").append(str);
+			$(document).bind("click",function(e){ 
+				var target = $(e.target); 
+				if(target.closest(".dynamic_itemConB").length == 0){ 
+					$(".item_commentPup").remove(); 
+				}
+			})
+		}else{
+			$(obj).siblings(".item_commentPup").remove();
+		}
+	}
+</script>
+</html>

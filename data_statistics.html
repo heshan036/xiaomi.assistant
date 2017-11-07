@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+    <link href="style/mobiscroll.custom-2.17.0.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/data.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/mobiscroll.custom-2.17.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8" src="js/common.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/data.js"></script>
+	<title>群数据</title>
+</head>
+<body style="padding-top:44px">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>群数据统计</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="statistics_tabMain">
+		<ul class="statistics_tabT">
+			<li class="active">活跃度数据</li>
+			<li>入/退群数据</li>
+		</ul>
+		<div class="statistics_tabC">
+			<div class="panel statistics_activity">
+				<header class="tabC_header">
+					<h2>
+						<small>今日活跃度</small>
+						<span>85%</span>
+					</h2>
+					<ul class="tabC_headerSum">
+						<li>
+							<h3><small>总发言人数</small><span>3人</span></h3>
+						</li>
+						<li>
+							<h3><small>访问总人数</small><span>3人</span></h3>
+						</li>
+					</ul>
+				</header>
+				<div class="table_group">
+					<ul class="table_groupth table_line">
+						<li>日期</li>
+						<li>活跃度</li>
+						<li>发言人数</li>
+						<li>群内访问人数</li>
+						<li>前两者重复数</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li>今天</li>
+						<li>85%</li>
+						<li>3</li>
+						<li>3</li>
+						<li>0</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li>昨天</li>
+						<li>85%</li>
+						<li>3</li>
+						<li>3</li>
+						<li>0</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li>01-12</li>
+						<li>85%</li>
+						<li>3</li>
+						<li>3</li>
+						<li>0</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel statistics_inout  none">
+				<header class="tabC_header">
+					<h2>
+						<small>当前成员数</small>
+						<span>85人</span>
+					</h2>
+					<ul class="tabC_headerSum">
+						<li>
+							<h3><small>当前入群总数</small><span>3人</span></h3>
+							<p><span>日</span><span>0</span></p>
+							<p><span>月</span><span>16</span></p>
+							<p><span>周</span><span>0</span></p>
+						</li>
+						<li>
+							<h3><small>当前退群总数</small><span>3人</span></h3>
+							<p><span>日</span><span>0</span></p>
+							<p><span>月</span><span>0</span></p>
+							<p><span>周</span><span>14</span></p>
+						</li>
+					</ul>
+				</header>
+				<section class="inout_sec inout_mouth">
+					<h2>
+						<span>按月份查询</span>
+						<input type="text" class="select_input" id="inout_mouthselect" readonly>
+<!-- 						<select name="" id="">
+							<option value="">2017-01</option>
+							<option value="">2017-02</option>
+						</select> -->
+					</h2>
+					<div class="inout_mouthCon">
+						<ul>
+							<li>月入群数：<span>1</span></li>
+							<li>月退群数：<span>1</span></li>
+						</ul>
+						<div class="table_group">
+							<ul class="table_groupth table_line">
+								<li>日期</li>
+								<li>总人数</li>
+								<li>入群人数</li>
+								<li>退群人数</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>今天</li>
+								<li>3</li>
+								<li>3</li>
+								<li>0</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>昨天</li>
+								<li>3</li>
+								<li>3</li>
+								<li>0</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>01-12</li>
+								<li>3</li>
+								<li>3</li>
+								<li>0</li>
+							</ul>
+							<a href="" class="more">查看更多</a>
+						</div>
+					</div>
+				</section>
+				<article class="inout_sec inout_member">
+					<ul class="inout_memberT">
+						<li class="active">入群</li>
+						<li>退群</li>
+					</ul>
+					<div class="inout_memberC">
+						<div class="panel">
+							<div class="search">
+								<a href="javascript:"><i class="fillfont icon-search"></i></a>
+								<input type="text" placeholder="请输入关键词">
+							</div>
+							<div class="table_group">
+								<ul class="table_groupth table_line">
+									<li>入群日期</li>
+									<li>入群成员</li>
+									<li>入群方式</li>
+								</ul>
+								<ul class="table_grouptr table_line">
+									<li>17-01-12</li>
+									<li><img src="images/pic.png"><span>名字</span></li>
+									<li><i class="fillfont icon-pen_1"></i></li>
+								</ul>
+								<a href="" class="more">查看更多</a>
+							</div>
+						</div>
+						<div class="panel none">
+							<div class="search">
+								<a href="javascript:"><i class="fillfont icon-search"></i></a>
+								<input type="text" placeholder="请输入关键词">
+							</div>
+							<div class="table_group">
+								<ul class="table_groupth table_line">
+									<li>退群日期</li>
+									<li>退群成员</li>
+									<li>退群方式</li>
+								</ul>
+								<ul class="table_grouptr table_line">
+									<li>17-01-12</li>
+									<li><img src="images/pic.png"><span>名字</span></li>
+									<li><i class="fillfont icon-pen_1"></i></li>
+								</ul>
+								<a href="" class="more">查看更多</a>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+
+<div id="dtBox"></div>
+</body>
+  <script type="text/javascript">  
+   $(function(){
+   		//curDateTime();
+   		$("#inout_mouthselect").val(curDateTime().curYear+'-'+curDateTime().curMonth)
+	    $("#inout_mouthselect").mobiscroll().date({  
+	    			preset: 'date',
+	    			theme:'auto',
+					lang: "zh",  
+					valueText:'2017-05',
+					cancelText: '取消', 
+					dateOrder:"yymm",					
+					dateFormat: 'yy-mm', //返回结果格式化为年月格式  
+					display:'bottom',
+					defaultValue:new Date(),
+					maxDate: new Date(),
+					headerText: function (valueText) { //自定义弹出框头部格式  
+						var array = valueText.split('-');  
+						return array[0] + "年" + array[1] + "月";  
+					},
+					onSelect:function(res){
+						console.log(res)
+					},
+					onClose:function(res){
+						console.log(res)
+					}
+				}); 
+
+	});
+	
+
+  </script> 
+</html>

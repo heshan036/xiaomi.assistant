@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/steward.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群管家</title>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>批量通知</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="mediaddWrapper" style="margin: 16px 0;">
+		<textarea name="" id="" rows="5" class="borderBox" placeholder="在这里输入内容，并点击发送。内容将会发送在群里，并可以选择@群内所有人"></textarea>
+		<ul class="mediaddBtns">
+			<li><i class="fillfont icon-tupian"></i>添加图片</li>
+				<li onclick="record();"><i class="fillfont icon-yuyin"></i>添加语音</li>
+				<li onclick="showlinkLayer();"><i class="fillfont icon-lianjie"></i>添加链接</li>
+		</ul>
+		<div class="mediaddList">
+			<div class="mediaddItem">
+				<img src="images/pic.png" alt="">
+				<div class="mediaddItem_btns">
+					<a><i class="fillfont icon-lajitong"></i></a>
+				</div>
+			</div>
+<!-- 			<div class="mediaddItem">
+				<p>odsjafsdlfnsdlnfsdojfosdmgosnaofdsifjs</p>
+				<div class="mediaddItem_btns">
+					<a><i class="fillfont icon-pen_" style="font-size:16px"></i></a>
+					<a><i class="fillfont icon-lajitong"></i></a>
+				</div>
+			</div> -->
+			<div class="mediaddItem">
+				<figure class="linkItem"><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+				<div class="mediaddItem_btns">
+					<a><i class="fillfont icon-lajitong"></i></a>
+				</div>
+			</div>
+			<div class="mediaddItem">
+				<p class="audio"><i class="linefont icon-audio"></i></p>
+				<div class="mediaddItem_btns">
+					<a><i class="fillfont icon-lajitong"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form_whiteline"><span>发送社群空间使用指引<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+	<div class="form_whiteline"><span>@所有人<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+
+	<a href="#" class="btn_block">提交</a>
+
+
+	<!--  选择添加链接方式弹窗-->
+	<ul id="chosetypePup" class="pupbox none">
+		<li class="checkWrapper"><input type="radio" name="choseType" id="choseInput" checked><label for="choseInput">手动输入链接</label></li>
+		<li class="checkWrapper"><input type="radio" name="choseType" id="choseGet"><label for="choseGet">获取链接</label></li>
+	</ul>
+	
+	<!-- 输入链接弹窗 -->
+	<div id="inputLinks" class="none">
+		<figure>
+			<img src="images/pic.png" alt="">
+			<p>请上传图片</p>
+		</figure>
+		<input type="text" placeholder="输入链接标题">
+		<input type="text" placeholder="输入链接地址,如：http://www.mmmee.cn">
+		<textarea name="" id="" cols="30" rows="3" placeholder="输入链接描述"></textarea>
+	</div>
+
+	<!-- 获取链接弹窗 -->
+	<div id="linksChosewrapper" class="linksChosewrapper none">
+		<div class="form_whiteline">
+			<p>链接加入群ID<i class="fillfont icon-icon-question"></i></p>
+			<input type="checkbox" class="switch">
+		</div>	
+		<section class="h2-sec linksChoseBox">
+			<h2>设置链接方式</h2>
+			<div class="linksListCon">
+				<p>1、群主将链接分享给本群小管家</p>
+				<p>2、在群内发送连接</p>
+				<p class="c-r3">注：以下情况，链接将不能被记录：<br>1、用PC版微信分享链接给小管家<br>2、页面未加载或分享给小管家</p>					
+			</div>
+			<h2>群链接列表 <a class="fr c-blue" style="font-size:12px" onclick="getLinks();"><i class="fillfont icon-icon19 mr5"></i>刷新</a></h2>
+			<div class="linksListCon">
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+			</div>
+		</section>
+		<ul class="editBtns">
+			<li><input type="checkbox" class="mr5">全选</li>
+			<li><i class="fillfont icon-lajitong"></i>删除链接</li>
+		</ul>
+	</div>
+
+	<!-- 录音弹窗 -->
+	<div id="addVoice" class="addVoice none">
+		<figure>
+			<img src="images/record.png" alt="" onclick="controlRecord(this);">
+			<p>请按一下，开始录制</p>
+		</figure>
+	</div>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/insertmedia.js"></script>
+</html>

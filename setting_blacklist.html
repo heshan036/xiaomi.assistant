@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+</head>
+<body style="padding-top:44px">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>黑名单设置</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="form_whiteline"><span>开启黑名单模式<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+	<p class="note_grayBg" style="padding-top:5px">开启黑名单模式，管家将自动踢出黑名单成员</p>
+
+	<section class="kicking_table">
+		<h2>
+			<span>黑名单记录</span>
+			<div class="secheader_btngroup">
+				<a class="secheader_btn">管理</a>
+				<select name="" id="">
+					<option value="">请选择类别</option>
+					<option value="">已被踢出群</option>
+					<option value="">已入黑名单</option>
+				</select>
+			</div>
+		</h2>
+		<div class="search">
+			<a href="javascript:"><i class="fillfont icon-search"></i></a>
+			<input type="text" placeholder="请输入关键词">
+		</div>
+		<div class="table_group">
+			<ul class="table_groupth table_line">
+				<li></li>
+				<li>成员</li>
+				<li>日期</li>
+				<li>状态</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox"></li>
+				<li>名字</li>
+				<li>17-01-12</li>
+				<li class="c-blue">已被踢出群</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox"></li>
+				<li>名字</li>
+				<li>17-01-12</li>
+				<li class="c-r1">已加入黑名单</li>
+			</ul>
+			<a href="" class="more">查看更多</a>
+		</div>
+	</section>
+
+	<footer class="blacklist_footer">
+		<a href="#">全选</a>
+		<a href="#" class="blacklist_footerbtn2"><i class="fillfont icon-yaoqing"></i>一键移除</a>
+	</footer>
+
+</body>
+</html>

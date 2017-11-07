@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/essence.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>群精华</title>
+	<style>
+	.commom_header .btn_topgroup{display: flex;flex-direction: row;position: absolute;right: 0;top: 0}
+	.commom_header .btn_topgroup a{padding: 0 10px}
+	</style>
+</head>
+<body>
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>群聊精华</h1>
+		<div id="btn_topgroup" class="btn_topgroup">
+			<a id="btn_del">删除</a>
+			<a id="btn_edit">编辑</a>
+		</div>
+	</header>
+
+	<div class="editChat">
+		<ul class="tabT">
+			<li class="active">剔除模式</li>
+			<li>精选模式</li>
+		</ul>
+		<div class="tabC">
+			<!-- 剔除模式 -->
+			<div class="panel delmode">
+				<figure class="chatItem"><!-- 剔除模式中剔除项添加active样式 -->
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p>小蜜助手即将上线</p>
+					</figcaption>
+					<a onclick="delItem(this);"><i class="fillfont icon-lajitong"></i></a>
+				</figure>
+				<figure class="chatItem">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p>
+							<span class="folder">小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线</span>
+							<a onclick="folderParam(this);" class="folderParam"><i class="linefont icon-arrowdown"></i></a>
+						</p>
+					</figcaption>
+					<a onclick="delItem(this);"><i class="fillfont icon-lajitong"></i></a>
+				</figure>
+				<figure class="chatItem">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p>
+							<span class="folder">小蜜助手即将上线小蜜助手即小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线将上线小蜜助手即将上线小蜜助手即将上线</span>
+							<a onclick="folderParam(this);" class="folderParam"><i class="linefont icon-arrowdown"></i></a>
+						</p>
+					</figcaption>
+					<a onclick="delItem(this);"><i class="fillfont icon-lajitong"></i></a>
+				</figure>
+				<figure class="chatItem">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p>
+							<span class="folder">小蜜助手即将上线小蜜助手即小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即</span>
+							<a onclick="folderParam(this);" class="folderParam"><i class="linefont icon-arrowdown"></i></a>
+						</p>
+					</figcaption>
+					<a onclick="delItem(this);"><i class="fillfont icon-lajitong"></i></a>
+				</figure>
+				<figure class="chatItem">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p class="audio"><i class="linefont icon-audio"></i></p><!-- 如果对话是语音，加上样式audio -->
+					</figcaption>
+					<a onclick="delItem(this);"><i class="fillfont icon-lajitong"></i></a>
+				</figure>
+				<figure class="chatItem">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p><img src="images/pic.png" alt=""></p>
+					</figcaption>
+					<a onclick="delItem(this);"><i class="fillfont icon-lajitong"></i></a>
+				</figure>
+				<figure class="chatItem">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<figure class="linkItem" onclick="window.location.href='https://m.toutiao.com/group/6422977164186534146/?iid=9414345188&app=news_article&wxshare_count=1&tt_from=weixin&utm_source=weixin&utm_medium=toutiao_android&utm_campaign=client_share'">
+							<img src="images/kx-default.jpg" alt="">
+							<figcaption><h3>手机手机快讯手机快讯手机快讯快讯</h3><h4>集团手机快讯手机快讯手机快讯手机快讯手机快讯手机快讯手机快讯快讯</h4></figcaption>
+						</figure>
+					</figcaption>
+					<a onclick="delItem(this);"><i class="fillfont icon-lajitong"></i></a>
+				</figure>
+			</div>
+			<!-- 精选模式 -->
+			<div class="panel chosemode none">
+				<figure class="chatItem active"><!-- 精选模式中选中项去除active样式 -->
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p>小蜜助手即将上线</p>
+					</figcaption>
+					<a onclick="choseItem(this);"><i class="fillfont icon-5"></i></a>
+				</figure>
+				<figure class="chatItem active">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p>小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线小蜜助手即将上线</p>
+					</figcaption>
+					<a onclick="choseItem(this);"><i class="fillfont icon-5"></i></a>
+				</figure>
+				<figure class="chatItem active">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p class="audio"><i class="linefont icon-audio"></i></p><!-- 如果对话是语音，加上样式audio -->
+					</figcaption>
+					<a onclick="choseItem(this);"><i class="fillfont icon-5"></i></a>
+				</figure>
+				<figure class="chatItem active">
+					<img src="images/pic.png" alt="">
+					<figcaption>
+						<h3>小蜜</h3>
+						<p><img src="images/pic.png" alt=""></p>
+					</figcaption>
+					<a onclick="choseItem(this);"><i class="fillfont icon-5"></i></a>
+				</figure>
+			</div>
+		</div>
+	</div>
+
+
+<!-- 
+	<div class="chatComment">
+		<div class="chatBtn-group">
+			<a><i class="linefont icon-dianzan"></i>点赞</a>
+			<a><i class="linefont icon-browse"></i>6</a>
+			<a id="comment-btn"><i class="linefont icon-comments"></i>评论</a>
+		</div>
+		<div class="essence_itemcomment">
+			<ul class="essence_itemLike clearfix"><li><i class="linefont icon-dianzan"></i><b>姓名</b></li><li><i class="linefont icon-dianzan"></i><b>姓名</b></li></ul>
+			<ul class="essence_itemcomm">
+				<li><b>姓名:</b><span>新年快乐新年快乐新年快新年快乐新年快乐新年快乐新年快乐新年快乐乐新年快乐新年快乐</span><a href="#"><i class="fillfont icon-lajitong"></i></a></li>
+				<li><b>姓名:</b><span>新年快乐</span><a href="#"><i class="fillfont icon-lajitong"></i></a></li>
+			</ul>
+		</div>
+	</div> -->
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+
+function folderParam(obj){
+	var _this=$(obj);
+	var _arrow=$(obj).find('i')
+	if(_arrow.hasClass('icon-arrowdown')){
+		_this.siblings('span').removeClass('folder');
+		_arrow.removeClass('icon-arrowdown').addClass('icon-arrowup')
+	}else{
+		_this.siblings('span').addClass('folder');
+		_arrow.addClass('icon-arrowdown').removeClass('icon-arrowup')
+	}
+}
+	//$("body").height(window.screen.availHeight);
+	
+	$(function(){
+		var _folderParam=$(".editChat .folder");
+		_folderParam.each(function(){
+			var _height=$(this).height();
+			if(_height == 68){
+				$(this).siblings('a.folderParam').show()
+			}else{
+				$(this).siblings('a.folderParam').hide()
+			}
+		})
+
+		// 删除群精华
+		$("#deleteChat-btn").on("click",function(){
+			layer.open({
+				type:1,
+				title:false,
+				shadeClose: true, //点击遮罩关闭
+				content: '\<\div style="padding:40px 20px;">是否删除本条群聊精华？\<\/div>',
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+		})
+
+		$(".editChat .tabT li").click(function(){
+			var ind=$(this).index();
+			$(this).addClass("active").siblings().removeClass("active");
+			$(this).parent(".tabT").siblings(".tabC").find(".panel:eq("+$(this).index()+")").show().siblings().hide()
+		})
+
+		$("#publicChat-btn").click(function(){
+			layer.open({
+				type:1,
+				title:'请输入标题',
+				shadeClose: true, //点击遮罩关闭
+				content: '\<\div style="padding:20px;"><input input type="text" style="height:36px;line-height:48px;width:100%" placeholder="请输入标题" autofocus>\<\/div>',
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+		})
+
+
+		// 添加评论
+		// var txtstr = '<textarea name="" id="" cols="30" rows="6" placeholder="请输入您的评论" style="padding: 10px 1rem;width: 100%;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;"></textarea>';
+		// $("#comment-btn").on("click",function(){
+		// 	layer.open({
+		// 		type:1,
+		// 		title:'发表评论',
+		// 		shadeClose: true, //点击遮罩关闭
+		// 		content: txtstr,
+		// 		btn:['确定','取消'],
+		// 		yes:function(index,layero){
+		// 			//按钮【确定】的回调
+		// 		},
+		// 		cancel:function(index,layero){
+		// 			//按钮【取消】的回调
+		// 			console.log("取消")
+		// 		}
+		// 	})
+		// })
+
+		
+	})
+
+	function choseItem(obj){
+		$(obj).parents(".chatItem").toggleClass("active")
+	}
+
+	function delItem(obj){
+		$(obj).parents(".chatItem").toggleClass("active")
+	}
+
+</script>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/steward.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群管家</title>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>标签管理</h1>
+		<a class="right_btn" onclick="addLabel();"><i class="fillfont icon-add1 mr5" style="font-size:14px;vertical-align: 0.1rem;"></i>标签</a>
+	</header>
+
+	<p class="note_grayBg">在编辑关键词时匹配标签，可将多个（组）关键词进行分类管理；星标关键词可在列表置顶。勾选标签可快捷删除。</p>
+
+	<section class="h2-sec labelMagage_list">
+		<h2 class="flexBox">
+			<b>标签列表</b>
+			<p>
+				<label><input type="checkbox" class="checkVisible mr5" id="choseAllabel">全选</label>
+				<a><i class="fillfont icon-lajitong" style="font-size:20px;vertical-align:baseline"></i></a>
+			</p>
+		</h2>
+		<div class="label_listMain">
+			<section class="label_listPart">
+				<h3 onclick="showCurkeylist(this);"><b><i class="fillfont icon-star"></i></b><span><i class="fillfont icon-sanjiaoxing-copy-copy fr"></i></span></h3>
+				<ul>
+					<li>
+						<p><span>安定</span><span>安定</span><a onclick="delKeyitem();"><i class="fillfont icon-lajitong"></i></a></p>
+					</li>
+					<li>
+						<p><span>annin</span><span>annin</span><a onclick="delKeyitem();"><i class="fillfont icon-lajitong"></i></a></p>
+					</li>
+				</ul>
+			</section>
+			<section class="label_listPart">
+				<h3 onclick="showCurkeylist(this);"><b><input type="checkbox" class="checkVisible mr5" name="choseLabel">你好</b><span><i class="fillfont icon-sanjiaoxing-copy-copy fr"></i></span></h3>
+				<ul>
+					<li>
+						<p><span>安定</span><span>安定</span><a onclick="delKeyitem();"><i class="fillfont icon-lajitong"></i></a></p>
+					</li>
+					<li>
+						<p><span>annin</span><span>annin</span><a onclick="delKeyitem();"><i class="fillfont icon-lajitong"></i></a></p>
+					</li>
+				</ul>
+			</section>
+			<section class="label_listPart">
+				<h3 onclick="showCurkeylist(this);"><b><input type="checkbox" class="checkVisible mr5" name="choseLabel">hello</b><span><i class="fillfont icon-sanjiaoxing-copy-copy fr"></i></span></h3>
+				<ul>
+					<a class="btn_sure btn_addkeys" onclick="matchKeys();">点击添加关键词</a>
+				</ul>
+			</section>
+		</div>
+	</section>
+
+	<a href="" class="btn_block">保存</a>
+
+
+	<!-- 匹配关键词弹窗 -->
+	<div id="KeysMatch" class="none">
+		<p class="note_grayBg">请选择需要匹配的关键词（可多选）</p>
+		<div class="search" style="margin:0 1rem">
+			<a href="javascript:"><i class="fillfont icon-search"></i></a>
+			<input type="search" placeholder="请输入搜索关键词">
+		</div>
+		<ul class="lableList">
+			<li><label><span>星级标签</span><span>星级标签</span><span>星级标签</span><span>星级标签</span><input type="checkbox" name="keymatchChose" class="checkVisible"></label></li>
+			<li><label><span>安宁</span><span>安宁</span><span>安宁</span><span>安宁</span><span>安宁</span><span>安宁</span><input type="checkbox" name="keymatchChose" class="checkVisible"></label></li>
+			<li><label><span>星级标签</span><input type="checkbox" name="keymatchChose" class="checkVisible"></label></li>
+		</ul>
+	</div>
+
+	<input type="text" placeholder="请输入标签名..." id="addLabelpup" class="none" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,''))"></input>
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/insertmedia.js"></script>
+<script>
+	$(function(){
+		$("input[name='choseLabel']").click(function(){
+			event.stopPropagation();
+		})
+
+		$("#choseAllabel").click(function(){
+			$("input[name='choseLabel']").attr("checked",$(this).is(':checked'))
+		})
+
+
+	})
+
+	function addLabel(){
+		var str = '';
+		layer.open({
+			type:1,
+			title:'添加标签',
+			content:$("#addLabelpup"),
+			shadeClose: true, //点击遮罩关闭
+			scrollbar: false,
+			btn:['保存','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				layer.close(index);
+			}
+		})
+	}
+
+	// 匹配关键词
+	function matchKeys(){
+		layer.open({
+			type:1,
+			title:'匹配关键词',
+			content:$("#KeysMatch"),
+			id:"KeysmatchWrapper",
+			shadeClose: true, //点击遮罩关闭
+			btn:['保存','取消'],
+			scrollbar: false,
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				layer.close(index);
+			}
+		})
+	}
+
+	function showCurkeylist(obj){
+		if($(obj).siblings("ul").is(":hidden")){
+			$(obj).find("span i").removeClass("rotate")
+		}else{
+			$(obj).find("span i").addClass("rotate")
+		}
+		$(obj).siblings("ul").toggle();
+	}
+
+  
+</script>
+</html>

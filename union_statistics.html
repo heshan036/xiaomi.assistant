@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/union.css"/>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+	<title>联盟统计</title>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>联盟统计</h1>
+		<a href="index.html"><i class="fillfont icon-icon1"></i></a>
+	</header>
+	
+	<div class="statistics_top">
+		<ul class="statistics_data">
+			<li><p>联盟总群数</p><b>2</b></li>
+			<li><p>总人数</p><b>22</b></li>
+			<li><p>今日签到数</p><b>2</b></li>
+		</ul>
+		<ul class="statistics_today">
+			<li><span>今日新增群：</span><b>0</b></li>
+			<li><span>今日退盟数：</span><b>0</b></li>
+		</ul>
+	</div>
+
+	<div class="statistics_tab">
+		<ul class="tabT">
+			<li class="active">分群榜</li>
+			<li>个人榜</li>
+		</ul>
+		<div class="tabC">
+			<div class="panel" id="groupStatistics">
+				<div class="search">
+					<a href="javascript:"><i class="fillfont icon-search"></i></a>
+					<input type="text" placeholder="请输入关键词">
+				</div>
+				<div class="table_group">
+					<ul class="table_groupth table_line">
+						<li>群名称</li>
+						<li>入盟时间</li>
+						<li>群人数</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li onclick="window.location.href='union_groupCard.html'"><img src="images/pic.png"><p><span class="btn_blue mainGroup_tag">主群</span>名字</p></li>
+						<li>2017-01-01</li>
+						<li>3</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li onclick="window.location.href='union_groupCard.html'"><img src="images/pic.png"><p>名字</p></li>
+						<li>2017-01-01</li>
+						<li>3</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li onclick="window.location.href='union_groupCard.html'"><img src="images/pic.png"><p>名字</p></li>
+						<li>2017-01-01</li>
+						<li>3</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li onclick="window.location.href='union_groupCard.html'"><img src="images/pic.png"><p>名字</p></li>
+						<li>2017-01-01</li>
+						<li>3</li>
+					</ul>
+				</div>
+				<p class="tc c-blue p10" id="loadMore">点击加载更多...</p>
+			</div>
+			<div class="panel none" id="personalStatistics">
+				<div class="search">
+					<a href="javascript:"><i class="fillfont icon-search"></i></a>
+					<input type="text" placeholder="请输入关键词">
+				</div>
+				<div class="table_group">
+					<ul class="table_groupth table_line">
+						<li>名称</li>
+						<li>参与群数</li>
+						<li>参与群</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li><img src="images/pic.png"><p>名字</p></li>
+						<li>2</li>
+						<li onclick="groupsEnter(this);">小智、社群空间</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li><img src="images/pic.png"><p>名字</p></li>
+						<li>2</li>
+						<li onclick="groupsEnter(this);">小智、社群空间</li>
+					</ul>
+				</div>
+				<p class="tc c-blue p10" id="loadMore">点击加载更多...</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+    
+<script>
+	$(function(){
+		// 分群榜、个人榜切换
+		$(".statistics_tab .tabT li").click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+			$(".statistics_tab .tabC").find(".panel:eq("+$(this).index()+")").show().siblings().hide()
+		})
+
+		//前3名添加排名图标
+		$(".statistics_tab .table_grouptr").each(function(){
+			var ind=$(this).index();
+			if(ind == 1){
+				$(this).find("li:eq(0)").prepend('<b class="rank"><i class="fillfont icon-icon-test"></i></b>')
+			}else if(ind == 2){
+				$(this).find("li:eq(0)").prepend('<b class="rank"><i class="fillfont icon-icon-test1"></i></b>')
+			}else if(ind == 3){
+				$(this).find("li:eq(0)").prepend('<b class="rank"><i class="fillfont icon-icon-test2"></i></b>')
+			}
+		})
+	})
+
+	function groupsEnter(obj){
+		var groupsEnter = "<ul class='groupsEnterList'><li><span>小智</span><span class='tr'>群管</span></li><li><span>小智</span><span class='tr'>群管</span></li></ul>"
+		layer.open({
+			type:1,
+			title:'参与群',
+			content:groupsEnter,
+			scrollbar:false,
+			id:'groupsEnterPlayer',
+			shadeClose: true, //点击遮罩关闭
+			scrollbar:false,
+			btn:['关闭'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			}
+		})
+	}
+
+	$(window).scroll(function(){
+		var scrollTop = $(this).scrollTop();
+		var scrollHeight = $(document).height();
+		var windowHeight = $(this).height();
+		if (scrollTop + windowHeight == scrollHeight) {
+			// 此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+			$("#loadMore").html('加载中...')
+			console.log(12)
+		}
+	});
+</script>
+</html>

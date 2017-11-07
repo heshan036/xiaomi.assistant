@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/steward.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群管家</title>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>添加关键词</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="keyword_add" id="keyword_add">
+		<section class="keyword_addList pt10">
+			<h3>
+				<b>关键词<small>(文字或数字，可指定多个关键词)</small></b>
+				<a onclick="addKeyword();"><i class="fillfont icon-add1" style="color:#00abd8"></i></a>
+			</h3>
+			<ul>
+				<li>
+					<input type="text" value="安定" disabled="true" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,''))">
+					<p>
+						<a onclick="editAddkey(this);" class="editAddkey"><i class="fillfont icon-pen_" style="font-size:15px"></i></a>
+						<a onclick="saveAddkey(this);" class="saveAddkey none"><i class="fillfont icon-baocun" style="font-size:15px"></i></a>
+						<a onclick="delAddkey(this);" class="delAddkey"><i class="fillfont icon-lajitong" style="font-size:20px;"></i></a>
+					</p>
+				</li>
+				<li>
+					<input type="text" value="安定" disabled="true" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,''))">
+					<p>
+						<a onclick="editAddkey(this);" class="editAddkey"><i class="fillfont icon-pen_" style="font-size:15px"></i></a>
+						<a onclick="saveAddkey(this);" class="saveAddkey none"><i class="fillfont icon-baocun" style="font-size:15px"></i></a>
+						<a onclick="delAddkey(this);" class="delAddkey"><i class="fillfont icon-lajitong" style="font-size:20px;"></i></a>
+					</p>
+				</li>
+			</ul>
+		</section>
+		<section class="keywordReply pt10">
+			<h3>
+				<b>回复内容<small>（回复内容不超过10条）</small></b>
+			</h3>
+			<div class="mediaddWrapper">
+				<ul class="mediaddBtns">
+					<li onclick="addText();"><i class="fillfont icon-pinglun"></i>+文字</li>
+					<li><i class="fillfont icon-tupian"></i>+图片</li>
+					<li onclick="record();"><i class="fillfont icon-yuyin"></i>+语音</li>
+					<li onclick="showlinkLayer();"><i class="fillfont icon-lianjie"></i>+链接</li>
+				</ul>
+			</div>
+			<div class="mediaddList">
+				<div class="mediaddItem">
+					<img src="images/pic.png" alt="">
+					<div class="mediaddItem_btns">
+						<a><i class="fillfont icon-lajitong"></i></a>
+					</div>
+				</div>
+				<div class="mediaddItem">
+					<p>odsjafsdlfnsdlnfsdojfosdmgosnaofdsifjs</p>
+					<div class="mediaddItem_btns">
+						<a  onclick="editmediaddtxt(this);"><i class="fillfont icon-pen_" style="font-size:16px"></i></a>
+						<a><i class="fillfont icon-lajitong"></i></a>
+					</div>
+				</div>
+				<div class="mediaddItem">
+					<figure class="linkItem"><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<div class="mediaddItem_btns">
+						<a><i class="fillfont icon-lajitong"></i></a>
+					</div>
+				</div>
+				<div class="mediaddItem">
+					<p class="audio"><i class="linefont icon-audio"></i></p>
+					<div class="mediaddItem_btns">
+						<a><i class="fillfont icon-lajitong"></i></a>
+					</div>
+				</div>
+			</div>
+			<ul class="keywords_labelist">
+				<li class="flexBox"><span>吼吼吼</span><a onclick="editLabel();">编辑标签</a></li>
+			</ul>
+			<div class="form_whiteline"><span>全联盟可见<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+		</section>
+		<div class="btn_groups flexBox">
+			<a href="" class="btn_sure">保存</a>
+			<a href="" class="btn_cancel">取消</a>
+		</div>
+	</div>
+	
+	<!-- 编辑标签弹窗 -->
+	<div id="lableChose" class="none">
+		<div class="search" style="margin:10px 1rem">
+			<a href="javascript:"><i class="fillfont icon-search"></i></a>
+			<input type="search" placeholder="请输入搜索关键词">
+		</div>
+		<ul class="lableList">
+			<li><label><span>星级标签</span><input type="radio" name="labelChose"></label></li>
+			<li><label><span>安宁</span><input type="radio" name="labelChose"></label></li>
+			<li><label><span>星级标签</span><input type="radio" name="labelChose"></label></li>
+			<li><label><span>安宁</span><input type="radio" name="labelChose"></label></li>
+			<li><label><span>星级标签</span><input type="radio" name="labelChose"></label></li>
+			<li><label><span>安宁</span><input type="radio" name="labelChose"></label></li>
+		</ul>
+		<div class="addNewlabel"><b>新建标签：</b><input type="text" id="addNewlabel" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,''))"></div>
+	</div>
+
+	<!--  选择添加链接方式弹窗-->
+	<ul id="chosetypePup" class="pupbox none">
+		<li class="checkWrapper"><input type="radio" name="choseType" id="choseInput" checked><label for="choseInput">手动输入链接</label></li>
+		<li class="checkWrapper"><input type="radio" name="choseType" id="choseGet"><label for="choseGet">获取链接</label></li>
+	</ul>
+	
+	<!-- 输入链接弹窗 -->
+	<div id="inputLinks" class="none">
+		<figure>
+			<img src="images/pic.png" alt="">
+			<p>请上传图片</p>
+		</figure>
+		<input type="text" placeholder="输入链接标题" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,''))">
+		<input type="text" placeholder="输入链接地址,如：http://www.mmmee.cn">
+		<textarea name="" id="" cols="30" rows="3" placeholder="输入链接描述" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,''))"></textarea>
+	</div>
+
+	<!-- 获取链接弹窗 -->
+	<div id="linksChosewrapper" class="linksChosewrapper none">
+		<div class="form_whiteline">
+			<p>链接加入群ID<i class="fillfont icon-icon-question"></i></p>
+			<input type="checkbox" class="switch">
+		</div>	
+		<section class="h2-sec linksChoseBox">
+			<h2>设置链接方式</h2>
+			<div class="linksListCon">
+				<p>1、群主将链接分享给本群小管家</p>
+				<p>2、在群内发送连接</p>
+				<p class="c-r3">注：以下情况，链接将不能被记录：<br>1、用PC版微信分享链接给小管家<br>2、页面未加载或分享给小管家</p>					
+			</div>
+			<h2>群链接列表 <a class="fr c-blue" style="font-size:12px" onclick="getLinks();"><i class="fillfont icon-icon19 mr5"></i>刷新</a></h2>
+			<div class="linksListCon">
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+			</div>
+		</section>
+		<ul class="editBtns">
+			<li><input type="checkbox" class="mr5">全选</li>
+			<li><i class="fillfont icon-lajitong"></i>删除链接</li>
+		</ul>
+	</div>
+	
+	<!-- 录音弹窗 -->
+	<div id="addVoice" class="addVoice none">
+		<figure>
+			<img src="images/record.png" alt="" onclick="controlRecord(this);">
+			<p>请按一下，开始录制</p>
+		</figure>
+	</div>
+
+	<div class="pr none" id="keywordsInputWrapper">
+		<ul>
+			<!-- <li><span>111</span></li> -->
+		</ul>
+		<textarea id="keywordsInput"  cols="30" rows="3" placeholder="请输入关键词..." onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,''))"></textarea>		
+	</div>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/insertmedia.js"></script>
+<script>
+	$(function(){
+		$("#keywords_label li").click(function(){
+			$(this).addClass("active").siblings().removeClass("active")
+		})
+
+		$("#keywordsInput").keydown(function(e){
+		    var e = e || window.event;
+		    var _this=$(this);
+		    if(e.keyCode==32){
+		        var value=$.trim(_this.val());
+		        _this.siblings("ul").append("<li onclick='delinputKeyword(this);'><span>"+value+"</span></li>")
+		        _this.val('')
+		    }
+		 });
+
+	})
+	function delinputKeyword(obj){
+		$(obj).remove();
+	}
+	function showCurkeylist(obj){
+		if($(obj).siblings("ul").is(":hidden")){
+			$(obj).find("span i").removeClass("rotate")
+		}else{
+			$(obj).find("span i").addClass("rotate")
+		}
+		$(obj).siblings("ul").toggle();
+	}
+
+	//添加回复文字
+    function addText(){
+    	var str = '<textarea name="" id="" cols="30" rows="5" placeholder="请输入回复文字..."></textarea>';
+    	layer.open({
+			type:1,
+			title:'添加回复文字',
+			content:str,
+			shadeClose: true, //点击遮罩关闭
+			btn:['保存','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				layer.close(index);
+			}
+		})
+    }
+    // 编辑标签
+    function editLabel(){
+    	layer.open({
+			type:1,
+			title:'选择标签',
+			content:$("#lableChose"),
+			id:'lablebox',
+			shadeClose: true, //点击遮罩关闭
+			scrollbar: false,
+			btn:['保存','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index)
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				layer.close(index);
+			}
+		})
+    }
+
+	//编辑关键词
+	function editAddkey(obj){
+		$(obj).siblings(".saveAddkey").show();
+		$(obj).hide()
+		$(obj).parent("p").siblings("input").attr("disabled",false).css({"border":"1px solid #e5e5e5"});
+	}
+	// 保存编辑关键词
+	function saveAddkey(obj){
+		$(obj).siblings(".editAddkey").show();
+		$(obj).hide();
+		$(obj).parent("p").siblings("input").attr("disabled",true).css({"border":"none"})
+	}
+
+	// 添加关键词编辑窗口
+	function editkeyItem(obj){
+		var _thisParent=$(obj).parents("li");
+		$(".keyword_listMain").find(".keyword_listItemtitle a").removeClass("rotate");
+		if(_thisParent.find("#keyword_edit").length > 0){
+			$("body").append($("#keyword_edit"));
+			$("#keyword_edit").hide()
+			//$(".keyword_listMain").find("#keyword_edit").remove();
+			return
+		}
+		_thisParent.find(".keyword_listItemtitle a").addClass("rotate");
+		_thisParent.append($("#keyword_edit"));
+		$("#keyword_edit").show()
+	}
+
+	// 添加关键词弹窗
+	function addKeyword(){
+    	layer.open({
+			type:1,
+			title:'添加关键词',
+			content:$("#keywordsInputWrapper"),
+			shadeClose: true, //点击遮罩关闭
+			btn:['保存','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+				$("#keywordsInputWrapper > ul").find("li").remove()
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				layer.close(index);
+			}
+		})
+	}
+</script>
+</html>

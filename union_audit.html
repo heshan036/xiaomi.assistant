@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/union.css"/>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>入盟审核</title>
+</head>
+<body class="pt pb">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>入盟审核</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+	
+	<div class="form_whiteWrapper mt20">
+		<div class="form_whiteline"><p>需要缴纳入盟费</p><input type="checkbox" class="switch" onclick="isUnionMM(this);"></div>
+		<div class="form_whiteline" id="enterUnion_money" style="display:none">
+			<p>入盟费用</p>
+			<p class="tr"><span>0.1</span><small>元</small><a onclick="editUnionMM(this);"><i class="fillfont icon-pen_ blue"></i></a></p>
+		</div>
+	</div>
+
+	<section class="h2-sec mt5">
+		<h2>入盟审核</h2>
+		<div class="enterAudit-list">
+			<div class="form_whiteline" style="margin-top:0"><span>自动审核<i class="fillfont icon-icon-question" onclick="isAutoaudit();"></i></span><input type="checkbox" class="switch"></div>
+			<div class="form_whiteline" style="margin-top:0;border-top:1px solid #e5e5e5"><p>审核记录</p><a class="line_chosebtn font-color" href="union_auditHistory.html"><i class="linefont icon-arrowright"></i></a></div>
+			<div class="table_group">
+				<ul class="table_groupth table_line">
+					<li><input type="checkbox" name="tr_all" onclick="choseAll(this);"></li>
+					<li>群名称</li>
+					<li>入盟费<small>（元）</small></li>
+					<li>留言</li>
+				</ul>
+				<ul class="table_grouptr table_line">
+					<li><input type="checkbox" name="tr_item" onclick="choseItem(this);"></li>
+					<li class="table_grouptrIMG1"><img src="images/pic.png"><p><span>名名字名字名字名字名字字</span><time>2017-01-01</time></p></li>
+					<li>100000</li>
+					<li class="c-blue" onclick="groupInfoLayer(this);">详情</li>
+				</ul>
+				<ul class="table_grouptr table_line">
+					<li><input type="checkbox" name="tr_item" onclick="choseItem(this);"></li>
+					<li class="table_grouptrIMG1"><img src="images/pic.png"><p><span>名名字名字名字名字名字字</span><time>2017-01-01</time></p></li>
+					<li>100000</li>
+					<li class="c-blue" onclick="groupInfoLayer(this);">详情</li>
+				</ul>
+				<p class="tc c-blue p10" id="loadMore">点击加载更多...</p>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer_btn2 flex_2">
+		<a onclick="choseAll(this);" style="background:#f2572d;color:#fff">同意</a>
+		<a onclick="tipsmsg();"  style="background:#00abd8;color:#fff">拒绝</a>
+	</footer>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	//修改入盟费用
+	function editUnionMM(obj){
+		var _this=$(obj)
+		var unionMM = _this.siblings("span").text();
+		console.log(unionMM)
+		var str = '<input type=\"text\" placeholder=\"请输入入盟费用\" value=\"'+unionMM+'\" id=\"unionMMInput\" autofocus>'
+		layer.open({
+			type:1,
+			title:'请输入入盟费用',
+			content:str,
+			scrollbar:false,
+			shadeClose: true, //点击遮罩关闭
+			btn:['确定','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				var unionMM=$("#unionMMInput").val();
+				_this.siblings("span").text(unionMM)
+				layer.close(index);
+			},
+			btn2:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+		})
+	}
+	//‘需要加纳入盟费’选中时，显示入盟费费用编辑
+	function isUnionMM(obj){
+		var _this=$(obj)
+		if(_this.is(":checked")){
+			_this.parents('.form_whiteWrapper').find("#enterUnion_money").show()
+		}else{
+			_this.parents('.form_whiteWrapper').find("#enterUnion_money").hide()
+		}
+	}
+
+	//显示群留言详情
+	function groupInfoLayer(obj){
+		var msg="12533";
+		var str ='<p class=\"tc\" style=\"padding:20px 1rem\">'+msg+'</p>';
+		layer.open({
+			type:1,
+			title:'群留言信息',
+			content:str,
+			scrollbar:false,
+			shadeClose: true, //点击遮罩关闭
+			btn:['确定','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			btn2:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+		})
+	}
+
+	//自动审核被选中时，弹窗提示
+	function isAutoaudit(){
+		layer.confirm('开启自动入盟审核，系统将根据入盟费缴纳情况自动通过社群的申请审核')
+	}
+
+	//全选，全不选
+	function choseAll(obj){
+		var _table=$(obj).parents('.table_group');
+		if($(obj).is(':checked')){
+			_table.find("input[name='tr_item']").prop('checked',true)
+		}else{
+			_table.find("input[name='tr_item']").prop('checked',false)
+		}
+	}
+	//判断全选
+	function choseItem(obj){
+		var _table=$(obj).parents('.table_group'); 
+		var _all=_table.find('input[name="tr_all"]')
+		var _item=_table.find("input[name='tr_item']");
+		var choseLen = 0;
+		_item.each(function(){
+			var _cheched=this.checked;
+			if(_cheched == true){
+				choseLen ++
+			}
+		})
+		if(choseLen == _item.length){
+			_all.prop('checked',true)
+		}else{
+			_all.prop('checked',false)
+		}
+	}
+
+	$(window).scroll(function(){
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			if (scrollTop + windowHeight == scrollHeight) {
+				// 此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+				$("#loadMore").html('加载中...')
+				console.log(12)
+			}
+	});
+</script>
+</html>

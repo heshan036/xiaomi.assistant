@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link href="style/DateTimePicker.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+     <script src="js/DateTimePicker.js" type="text/javascript"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+	<style>
+		#inviteLayerBox{overflow: hidden;height: auto}
+		#inviteLayer{padding: 20px}
+		.choseTime{width: 100%;margin-bottom: 10px;border-radius: 3px}
+		.choseTime b{font-weight: normal;margin-bottom: 5px;    display: block;}
+		.choseTime span{background: #a0a0a0;display: inline-block;width: 24%;text-align: center;height: 27px;line-height: 27px;}
+		.choseTime i{color: #fff;}
+		.layui-layer  .choseTime input{width: 70%;text-align: center;color: #666;border:1px solid #dcdcdc; height: 27px;line-height: 27px;}
+	</style>
+</head>
+<body style="padding-top:44px">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>踢人设置</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+	
+	<section class="kickSetting h2-sec">
+		<h2>自动踢人设置</h2>
+		<div class="form_whiteline"><p>开启黑名单自动踢人模式<i class="fillfont icon-icon-question" onclick="showAlert();"></i></p><p><small>管家为群主时；将自动移除黑名单成员</small></p><input type="checkbox" class="switch"></div>
+		<div class="form_whiteline">
+			<p>只允许群主/群管拉人<span onclick="setInviteTime()" class="c-blue f12 pl5 none" id="setInviteTime" style="position:relative;z-index:99">设置时间</span></p>
+			<p><small>管家为群主时；将自动移除非管理员邀请的成员</small></p>	
+			<input type="checkbox" class="switch" id="handleInvite">
+		</div>
+		<div class="form_whiteline"><p>炸群者自动踢出并加入黑名单</p><p><small>管家为群管时；将自动移除炸群者并加入黑名单</small></p><input type="checkbox" class="switch"></div>
+		<div class="form_whiteline"><p>是否接收群联盟的黑名单</p><p><small>接收到联盟其他群共享的黑名单</small></p><input type="checkbox" class="switch"></div>
+		<div class="form_whiteline"><p>将本群的黑名单同步到群联盟</p><p><small>开启后将本群的黑名单共享给联盟其他群</small></p><input type="checkbox" class="switch"></div>
+		<div class="form_whiteline" onclick="window.location.href='setting_kicking.keywords.html'"><p>关键词踢人</p><p><small>管家为群主时；将自动警告或移除发送敏感词汇成员</small></p><a class="line_chosebtn font-color" onclick=""><i class="linefont icon-arrowright"></i></a></div>
+		<div class="form_whiteline" onclick="window.location.href='setting_kicking.links.html'"><p>链接踢人</p><p><small>管家为群主时；将自动警告或移除发送此链接成员</small></p><a class="line_chosebtn font-color" onclick=""><i class="linefont icon-arrowright"></i></a></div>
+	</section>
+
+	<section class="h2-sec" id="kickManage">
+		<h2>自动踢人管理</h2>
+		<ul class="tabT flex_2">
+			<li class="active">踢人记录</li>
+			<li>黑名单</li>
+		</ul>
+		<div class="kicking_table">
+			<div class="panel">
+				<div class="search">
+					<a href="javascript:"><i class="fillfont icon-search"></i></a>
+					<input type="search" placeholder="请输入关键词">
+				</div>
+				<div class="table_group">
+					<ul class="table_groupth table_line">
+						<li></li>
+						<li>成员</li>
+						<li>日期</li>
+						<li>状态</li>
+						<li>备注</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li><input type="checkbox" name="kickuser"></li>
+						<li>名字</li>
+						<li>17-01-12</li>
+						<li class="c-blue">已被踢出群</li>
+						<li>炸群</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li><input type="checkbox" name="kickuser"></li>
+						<li>名字</li>
+						<li>17-01-12</li>
+						<li class="c-r1">已入黑名单</li>
+						<li>发送关键词</li>
+					</ul>
+					<a href="" class="more">查看更多</a>
+				</div>
+				<footer class="settingKick_footer flex_2">
+					<a  onclick="choseAll(this);">全选</a>
+					<!-- <a href="#" class="settingKick_footerbtn2"  onclick="tipsmsg();"><i class="fillfont icon-yaoqing"></i>一键踢出</a> -->
+					<a href="#" class="settingKick_footerbtn3"><i class="linefont icon-xiaozu"></i>加入黑名单</a>
+				</footer>
+			</div>
+			<div class="panel none">
+				<div class="search">
+					<a href="javascript:"><i class="fillfont icon-search"></i></a>
+					<input type="search" placeholder="请输入关键词">
+				</div>
+				<div class="table_group">
+					<ul class="table_groupth table_line">
+						<li></li>
+						<li>成员</li>
+						<li>日期</li>
+						<li>状态</li>
+						<li>备注</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li><input type="checkbox" name="blackuser"></li>
+						<li>名字</li>
+						<li>17-01-12</li>
+						<li class="c-blue">已被踢出群</li>
+						<li>炸群</li>
+					</ul>
+					<ul class="table_grouptr table_line">
+						<li><input type="checkbox" name="blackuser"></li>
+						<li>名字</li>
+						<li>17-01-12</li>
+						<li class="c-r1">已入黑名单</li>
+						<li>发送关键词</li>
+					</ul>
+					<a href="" class="more">查看更多</a>
+				</div>
+				<footer class="settingKick_footer flex_2">
+					<a onclick="choseAll(this);">全选</a>
+					<a class="settingKick_footerbtn2"  onclick="tipsmsg();"><i class="fillfont icon-yaoqing"></i>一键踢出</a>
+				</footer>
+			</div>
+		</div>
+	</section>
+
+	<!-- 群主/群管拉人时间 弹窗-->
+	<div id="inviteLayer">
+		<p class="choseTime">
+			<b>开始时间：</b>
+			<span><i class="fillfont icon-shijian"></i></span><input type="text" readonly  data-field="time" data-format="HH:mm:ss" readonly value="00:00:01">
+		</p>
+		<p class="choseTime">
+			<b>结束时间：</b>
+			<span><i class="fillfont icon-shijian"></i></span><input type="text" readonly  data-field="time" data-format="HH:mm:ss" readonly value="23:59:59">
+		</p>
+	</div>
+
+	<div id="dtBox"></div>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$(function(){
+		$("#kickManage .tabT li").click(function(){
+			$(this).addClass('active').siblings().removeClass("active");
+			$(this).parents("#kickManage").find(".kicking_table > .panel:eq("+$(this).index()+")").show().siblings().hide()
+		})
+
+		$("#handleInvite").click(function(){
+			if($(this).is(':checked')){
+				$("#setInviteTime").show()
+			}else{
+				$("#setInviteTime").hide()
+			}
+		})
+
+
+		// 设置群主/群管拉人时间
+		var inviteTimeDefault='';
+		$("#dtBox").DateTimePicker({
+			beforeShow:function(oInputElement){
+				var zIndex=parseInt($(".layui-layer").css('z-index')) + 1;
+				var oDTP = this;
+				$("#dtBox").css({'z-index':zIndex})
+				inviteTimeDefault=$(oInputElement).val() 
+				if($(oInputElement).val() === ""){
+					oDTP.settings.defaultDate = new Date();
+				}
+			},
+			beforeHide:function(oInputElement){
+				$(oInputElement).val(inviteTimeDefault) 
+			}
+		});
+	})
+
+	function tipsmsg(){
+		console.log(12)
+		var index = layer.msg('踢人成功', {icon: 1,time:1000}); 
+	}
+
+
+	function choseAll(obj){
+		var _checkbox=$(obj).parents('.panel').find("input[type='checkbox']")
+		if($(obj).text() == '全选'){
+			_checkbox.attr("checked",true)
+			$(obj).text('取消全选')
+		}else{
+			_checkbox.attr("checked",false)
+			$(obj).text('全选')
+		}
+	}
+
+	function showAlert(){
+		layer.alert('开启此功能，多次（2次以上）邀请黑名单成员的邀请人，管家将自动推送警告',function(index){
+			//do something
+			layer.close(index);
+		})
+	}
+
+	function setInviteTime(){
+		layer.open({
+			type:1,
+			id:'inviteLayerBox',
+			title:'设置时间',
+			scrollbar: false,
+			content:$("#inviteLayer"),
+			shadeClose: true, //点击遮罩关闭
+			btn:['保存','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				layer.close(index);
+			}
+		})
+	}
+
+</script>
+</html>

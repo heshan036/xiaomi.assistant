@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+	<title>购买功能</title>
+	<style>
+	.numEdit{display: flex;flex-direction: row;align-items: stretch;height: 100%;}
+		.numEdit a{background: #eee;width: 36px;height: 100%;line-height: 40px;text-align: center;display: inline-block;}
+		.numEdit input{width: 54px;text-align: center;height: 100%;line-height: 40px;background: #f4f5f6}
+		.newBuyCon .form_whiteline{display: flex;flex-direction: row;justify-content: space-between;height: auto;padding: 10px 1rem;line-height: 1.5;align-items: center;}
+		.primaryPrice{text-align: right;color: #a0a0a0}
+	</style>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>购买功能</h1>
+		<a href="index.html"><i class="fillfont icon-icon1"></i></a>
+	</header>
+
+	<section class="admin_top2">
+		<img src="images/pic.png">
+		<figcaption>
+			<h3>大爱淘沙</h3>
+		</figcaption>
+	</section>
+
+	
+	<section class="h2-sec mb15 newBuyCon">
+		<h2>请选择购买模块<small>（可多选）</small></h2>
+		<ul>
+			<li class="form_whiteline" id="groupUnion">
+				<span class="sec-tag">基础模块<a href="#" class="ml5"><small class="c-blue">查看详情</small></a></span>
+				<div class="pr" style="font-size:12px">
+					<p><small>￥</small><strong>58.00</strong><span class="c-88">/永久</span><input type="checkbox" class="checkVisible ml5" name="checkItem" checked disabled onclick="countSum();"></p>
+					<p class="primaryPrice">原价：<s>58.00</s></p>
+				</div>
+			</li>
+			<li class="form_whiteline" id="groupUnion">
+				<span class="sec-tag"><i class="fillfont icon-icon mr5"></i>社群联盟<a href="#" class="ml5"><small class="c-blue">查看详情</small></a></span>
+				<div class="pr" style="font-size:12px">
+					<p><small>￥</small><strong>58.00</strong><span class="c-88">/永久</span><input type="checkbox" class="checkVisible ml5" name="checkItem" checked onclick="countSum();"></p>
+					<p class="primaryPrice">原价：<s>58.00</s></p>
+				</div>
+			</li>
+			<li class="form_whiteline f13"><strong>购买数量：</strong><span class="fr c-88 numEdit" id="numEdit"><a onclick="minusNum(this);">-</a><input type="number" value="1" readonly=""><a onclick="plusNum(this);">+</a></li>
+			<li class="form_whiteline f13"><strong>折上折：</strong><span class="fr c-88"><strong id="totalMoney">0.95</strong></span></li>
+			<li class="form_whiteline f13"><strong>优惠价：</strong><span class="fr c-r3 f14"><small>￥</small><strong id="totalMoney2">58</strong></span></li>
+		</ul>
+	</section>
+	
+	<a class="btn_block ml20 mr20" onclick="upGrade();">购买</a>
+
+	<section class="h2-sec payWay none" id="payWay">
+		<h2><span>应付金额：</span><b class="c-blue"><small>￥</small><strong>188.00</strong></b></h2>
+		<ul>
+			<li><input type="radio" class="mr5"  id="payWay_wx" checked><label for="payWay_wx"><img src="images/wxPay_logo.png" alt="微信支付">微信支付</label></li>
+			<!-- <li><input type="radio" class="mr5"  id="payWay_jd"><label for="payWay_jd">京东支付</label></li> -->
+		</ul>
+	</section>
+
+</body>
+<script>
+	// $(function(){
+	// 	// 选择模块式价钱跟着变动
+	// 	$("input[name='checkItem']").click(function(){
+	// 		var totalMoney=0;
+	// 		var choseItem=$("input[name='checkItem']:checked");
+	// 		var _num=parseInt($("#numEdit input").val());
+	// 		choseItem.each(function(){
+	// 			var itemMoney=parseInt($(this).parent("span").find("strong").text());
+	// 			totalMoney+=itemMoney;
+	// 		})
+	// 		$("#totalMoney").text(totalMoney*_num);
+	// 		$("#totalMoney2").text(totalMoney*_num)
+	// 	})
+	// })
+
+
+	function upGrade(){
+		var choseItem=$("input[name='checkItem']:checked");
+		if(choseItem.length == 0){
+			return
+		}
+		var groupUnion=$("#groupUnion").find("#unionItem");
+		var msgstr='<p class="m15">该群已加入群联盟！如您选择升级，将自动退出原有联盟，并升级为联盟主群，<span class="c-r3">请谨慎操作！</span><p>';
+		if(groupUnion.is(":checked")){
+			var msgLayer=layer.open({
+								type:1,
+								title:'温馨提示',
+								content:msgstr,
+								scrollbar:false,
+								shadeClose: true, //点击遮罩关闭
+								btn:['确定','取消'],
+								yes:function(index,layero){
+									//按钮【确定】的回调
+									layer.close(msgLayer);
+									var payWay=layer.open({
+										type:1,
+										title:'请选择支付方式',
+										content:$("#payWay"),
+										scrollbar:false,
+										shadeClose: true, //点击遮罩关闭
+										btn:['确定','取消'],
+										yes:function(index,layero){
+											//按钮【确定】的回调
+											layer.close(payWay);
+										},
+										btn2:function(index,layero){
+											//按钮【确定】的回调
+											layer.close(payWay);
+										}
+									})
+								},
+								btn2:function(index,layero){
+									//按钮【确定】的回调
+									layer.close(msgLayer);
+								}
+							})
+		}else{
+			var payWay=layer.open({
+							type:1,
+							title:'请选择支付方式',
+							content:$("#payWay"),
+							scrollbar:false,
+							shadeClose: true, //点击遮罩关闭
+							btn:['确定','取消'],
+							yes:function(index,layero){
+								//按钮【确定】的回调
+								layer.close(payWay);
+							},
+							btn2:function(index,layero){
+								//按钮【确定】的回调
+								layer.close(payWay);
+							}
+						})
+		}
+	}
+
+	function countSum(){
+		// 选择模块式价钱跟着变动
+		var totalMoney=0;
+		var choseItem=$("input[name='checkItem']:checked");
+		var _num=parseInt($("#numEdit input").val());
+		choseItem.each(function(){
+			var itemMoney=parseInt($(this).parent("span").find("strong").text());
+			totalMoney+=itemMoney;
+		})
+		$("#totalMoney").text(totalMoney*_num);
+		$("#totalMoney2").text(totalMoney*_num)
+	}
+
+
+	function minusNum(obj){
+		var _num=parseInt($(obj).siblings("input").val())
+		if(_num > 1){
+			$(obj).siblings("input").val(_num-1)
+		}else{
+			return false;
+		}
+		countSum()
+	}
+
+	function plusNum(obj){
+		var _num=parseInt($(obj).siblings("input").val());
+		$(obj).siblings("input").val(_num+1)
+		countSum()
+	}
+</script>
+</html>

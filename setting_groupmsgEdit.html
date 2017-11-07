@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+</head>
+<body style="padding-top:44px">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>群信息修改</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="setting_headPortrait">
+		<div class="setting_hpic">
+			<div class="setting_oldpic"><a href=""><img src="images/pic.png" alt=""></a><h3>群头像</h3></div>
+			<div class="setting_newpic" id="upPortrait">
+				<a href=""><i class="fillfont icon-camera"></i></a><h3>上传新头像</h3>
+				<form id="uploadForm" enctype="multipart/form-data" method="post" action=""> 
+					<input type="file" name="imageFile" id="imageFile"/>
+				</form> 
+			</div>
+		</div>
+		<p>（建议上传小于200kb的正方形图片）</p>
+	</div>
+
+	<div class="form_whiteline"><span>群名称</span><input type="input" class="normal_input" value="小智"></div>
+	<div class="form_whiteline" onclick="typeChose();"><span>分类</span><a class="line_chosebtn" id="Thumbup-btn"><span>同事群</span><i class="linefont icon-arrowright"></i></a></div>
+	<div class="form_brline">
+		<label for="">微信群介绍<small>最多150个字</small></label>
+		<textarea name="" id=""  rows="5" placeholder="请输入微信群介绍"></textarea>
+	</div>
+	<a href="#" class="btn_block">发布</a>
+
+	<div class="typeChose none" id="typeChose">
+		<div class="typesBox">		
+			<dl>
+				<dt>娱乐游戏</dt>
+				<dd>红包</dd><dd>棋牌</dd><dd>游戏</dd><dd>明星</dd><dd>直播</dd><dd>影视</dd><dd>动漫</dd>
+			</dl>
+			<dl>
+				<dt>娱乐游戏</dt>
+				<dd>红包</dd><dd>棋牌</dd><dd>游戏</dd><dd>明星</dd><dd>直播</dd><dd>影视</dd><dd>动漫</dd>
+			</dl>
+			<dl>
+				<dt>娱乐游戏</dt>
+				<dd>红包</dd><dd>棋牌</dd><dd>游戏</dd><dd>明星</dd><dd>直播</dd><dd>影视</dd><dd>动漫</dd>
+			</dl>
+		</div>
+		<div class="typeInput">
+			<label>自定义:</label><input type="text" value="同事群">
+		</div>
+	</div>
+	
+	
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$(function(){
+
+		//上传图片
+        $("#imageFile").change(function(e){
+    		var iMaxFilesize = 2097152; //2M 
+			var oFile =$(this)[0].files[0]; //读取文件 
+			var rFilter = /^(image\/bmp|image\/gif|image\/jpeg|image\/png|image\/png|image\/tiff)$/i; 
+    		console.log(oFile)
+			if (!rFilter.test(oFile.type)) { 
+				alert("文件格式必须为图片"); 
+				return; 
+			} 
+			if (oFile.size > iMaxFilesize) { 
+				alert("图片大小不能超过2M"); 
+				return; 
+			} 
+			var vFD = new FormData($('#uploadForm')[0]);
+        })
+	})
+
+	function typeChose(){
+		layer.open({
+			type:1,
+			title:'请选择标签',
+			shadeClose: true, //点击遮罩关闭
+			content: $("#typeChose"),
+			btn:['保存','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				console.log("取消")
+			}
+		})
+	}
+</script>
+</html>

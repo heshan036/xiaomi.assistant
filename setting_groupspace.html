@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+</head>
+<body style="padding-top:44px">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>空间访问设置</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="form_whiteline"><span>开启黑名单模式<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+	<div class="form_whiteline"><span>开启加入功能<i class="fillfont icon-icon-question"></i></span><input type="checkbox" class="switch"></div>
+
+	<section class="groupspace_methods">
+		<h2>用户加入该群的方式</h2>
+		<div class="groupspace_method">
+			<h3><input type="radio" checked="">小管家二维码<small>（自定义设置二维码）</small></h3>
+			<div class="groupspace_methodstep">
+				<h4>第一步：扫描添加本群管家</h4>
+				<p><img src="images/erweima.png" alt=""></p>
+			</div>
+			<div class="groupspace_methodstep">
+				<h4>第二步：和管家对话，输入验证码</h4>
+				<p>自定义设置验证码：<input type="text" placeholder="请输入4个数字"></p>
+			</div>
+		</div>
+		<div class="groupspace_method">
+			<h3><input type="radio">上传群主二维码<a class="line_chosebtn"><i class="linefont icon-arrowright"></i></a></h3>
+		</div>
+	</section>
+
+	<a href="#" class="btn_block">提交</a>
+	<a href="#" class="btn_block btn_cancel">取消</a>
+
+</body>
+</html>

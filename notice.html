@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/notice.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>群通知</title>
+</head>
+<body>
+
+	<header class="notice_header">
+		<p><i class="fillfont icon-volume_"></i>今日新增群通知条数： <span>2</span> </p>
+		<a id="public-Btn">发起群通知</a>
+		<a id="chose-Btn">筛选 <i class="linefont icon-arrowright"></i></a>
+	</header>
+
+	<div class="notice_lists">
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon" onclick="window.location.href='notice_info.html'">
+				<h2><i class="fillfont icon-meng" style="color:#f2572d;font-size:20px"></i>公告1</h2>
+				<div class="notice_itemdetail">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐</div>
+				<footer>
+					<time>2017-01-20  15:56</time>
+					<div class="editItem pr">
+						<span class="c-blue" onclick="switchPup(this);"><i class="fillfont icon-gengduo"></i></span>
+						<p>
+							<span><i class="fillfont icon-pen_"></i></span>
+							<span><i class="fillfont icon-lajitong" style="font-size:20px"></i></span>
+						</p>
+					</div>
+				</footer>
+			</div>
+			<a href="#">我知道了</a>
+		</div>
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon"  onclick="window.location.href='notice_info.html'">
+				<h2>公告1</h2>
+				<div class="notice_itemdetail link" onclick="showcs();">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年</div>
+				<footer>
+					<time>2017-01-20  15:56</time>
+					
+				</footer>
+			</div>
+			<a href="#" class="disabled">我知道了</a>
+		</div>
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon" onclick="window.location.href='notice_info.html'">
+				<h2>公告1</h2>
+				<div class="notice_itemdetail">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐</div>
+				<time>2017-01-20  15:56</time>
+			</div>
+			<a href="#">我知道了</a>
+		</div>
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon"  onclick="window.location.href='notice_info.html'">
+				<h2>公告1</h2>
+				<div class="notice_itemdetail link" onclick="showcs();">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年</div>
+				<time>2017-01-20  15:56</time>
+			</div>
+			<a href="#" class="disabled">我知道了</a>
+		</div>
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon" onclick="window.location.href='notice_info.html'">
+				<h2>公告1</h2>
+				<div class="notice_itemdetail">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐</div>
+				<time>2017-01-20  15:56</time>
+			</div>
+			<a href="#">我知道了</a>
+		</div>
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon"  onclick="window.location.href='notice_info.html'">
+				<h2>公告1</h2>
+				<div class="notice_itemdetail link" onclick="showcs();">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年</div>
+				<time>2017-01-20  15:56</time>
+			</div>
+			<a href="#" class="disabled">我知道了</a>
+		</div>
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon" onclick="window.location.href='notice_info.html'">
+				<h2>公告1</h2>
+				<div class="notice_itemdetail">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年快乐</div>
+				<time>2017-01-20  15:56</time>
+			</div>
+			<a href="#">我知道了</a>
+		</div>
+		<div class="notice_item">
+			<img src="images/notice_default.png" alt="公告">
+			<div class="notice_itemCon"  onclick="window.location.href='notice_info.html'">
+				<h2>公告1</h2>
+				<div class="notice_itemdetail link" onclick="showcs();">大家新年快乐大家新年快乐大家新年快乐大家新年快乐大家新年</div>
+				<time>2017-01-20  15:56</time>
+			</div>
+			<a href="#" class="disabled">我知道了</a>
+		</div>
+	</div>
+	
+	<footer class="footer">
+		<div class="footer_home active" onclick="window.location.href='index.html'">
+			<p><i class="fillfont icon-home"></i></p>
+		</div>
+		<ul>
+			<li onclick="window.location.href='group.html'">
+				<i class="fillfont icon-group"></i>
+				<p>群成员</p>
+			</li>
+			<li onclick="window.location.href='mine.html'">
+				<i class="fillfont icon-user"></i>
+				<p>我的</p>
+			</li>
+		</ul>
+	</footer>
+
+	<!--  筛选弹窗-->
+	<div class="pupbox none" id="chosePup">
+		<ul id="chosePup">
+			<li><input type="checkbox" id="choseAnnounce" checked><label for="choseAnnounce">公告</label></li>
+			<li><input type="checkbox" id="choseRule" checked><label for="choseRule">群规</label></li>
+		</ul>
+	</div>
+
+	<!--发起群通知弹窗  -->
+	<div class="pupbox none" id="publicPup">
+		<ul>
+			<li><input type="radio" name="publicItem" id="publicAnnounce" checked><label for="publicAnnounce">公告</label></li>
+			<li><input type="radio" name="publicItem" id="publicRule"><label for="publicRule">群规</label></li>
+		</ul>
+	</div>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$(function(){
+		// 发起群通知弹窗		
+		$("#public-Btn").on("click",function(){
+			layer.open({
+				type:1,
+				title:'发起群通知',
+				shadeClose: true, //点击遮罩关闭
+				content: $('#publicPup'),
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+					window.location.href='notice_add.html'
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+		})
+
+		// 筛选弹窗		
+		$("#chose-Btn").on("click",function(){
+			layer.open({
+				type:1,
+				title:'筛选',
+				shadeClose: true, //点击遮罩关闭
+				content: $('#chosePup'),
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+					window.location.href='notice_chose.html'
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+		})
+
+	})
+	function showcs(){
+		alert(12);
+		event.stopPropagation();
+	}
+
+	function switchPup(obj){
+		var _pup=$(obj).siblings("p");
+		_pup.toggle();
+		event.stopPropagation();
+	}
+</script>
+</html>

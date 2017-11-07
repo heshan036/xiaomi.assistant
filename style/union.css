@@ -1,0 +1,136 @@
+/*union list*/
+.union-folder{background: #fff;margin-top: 16px}
+.union-folder h2 b{font-weight: normal;color: #333;font-size: 1.3rem}
+.union-folder h2 a{display: inline-block;}
+.union-folder h2 a.rotate{transform: rotate(90deg);}
+.unionList{border-top: 1px solid #dcdcdc}
+.unionList .search{margin: 8px 1.4rem;background: #f4f5f6}
+.unionList .search input{background: #f4f5f6}
+.unionList-item{display: flex;flex-direction: row;justify-content: space-between;align-items: center;margin: 0 1rem;padding:8px 0;flex-wrap: nowrap;border-bottom: 1px dashed #e5e5e5}
+.unionList-item:last-child{border-bottom: none}
+.unionList-item figure{flex: 2;display: flex;flex-direction: row;align-items: center;font-size: 1.3rem;color: #666;overflow: hidden;}
+.unionList-item figure img{width: 36px;height: 36px;border-radius: 18px;margin-right: 5px}
+.unionList-item figure h3{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.unionList-item > p{flex: 0.8;text-align: right;}
+.unionList-item > p span{padding: 2px 10px;border-radius: 3px;border:1px solid #dcdcdc;font-size: 12px}
+.unionList-item > p span[class^='btn']{border:none;}
+
+.unionInfoLayer figure{text-align: center;}
+.unionInfoLayer figure img{width: 48px;height: 48px;border-radius: 24px}
+.unionInfoLayer figure h3{font-size: 1.3rem;color: #00abd8}
+.unionInfoLayer figure h4 {font-size: 12px;}
+.unionInfoLayer ul{background: #fff;margin-top: 16px;padding: 8px }
+.unionInfoLayer li{display: flex;flex-direction: row;justify-content: space-between;align-items: center;padding: 8px 1rem;font-size: 1.3rem;border-bottom: 1px solid #e5e5e5}
+.unionInfoLayer li:last-child{border-bottom: none}
+.unionInfoLayer span{color: #a0a0a0;font-size: 12px}
+
+#enterUnion_money{margin-top: 0 !important;border-top:1px solid #e5e5e5;display: flex;flex-direction: row;justify-content: space-between;align-items: center;}
+#enterUnion_money p{flex: 1;color: #333}
+#enterUnion_money span{color: #666;font-size: 12px}
+#enterUnion_money a i{color:#00abd8;margin-left: 5px;font-size: 1.4rem}
+
+/*union audit*/
+/*.enterAudit-list{background: #fff}*/
+.enterAudit-list .table_group{background: #fff;margin-top: 10px}
+.enterAudit-list .table_line{ }
+.enterAudit-list .table_line li:first-child{flex: 0.4}
+.enterAudit-list .table_line li:nth-child(2){flex: 2.2}
+.enterAudit-list .table_line li:nth-child(3){flex: 1}
+.enterAudit-list .table_line li:last-child{flex: 1}
+.enterAudit-list .table_grouptr li:first-child{line-height: 60px}
+.enterAudit-list .table_grouptr li:nth-child(3){line-height: 60px}
+.enterAudit-list .table_grouptr li:last-child{line-height: 60px}
+.table_grouptrIMG1{display: flex;flex-direction: row;align-items: center;padding: 10px 5px}
+.table_grouptrIMG1 img{width: 36px;height: 36px;border-radius: 50%;border:1px solid #e5e5e5;margin-right: 5px}
+.table_grouptrIMG1 p{width: calc(100% - 41px);width: -webkit-calc(100% - 41px);width: -moz-calc(100% - 41px);width: -o-calc(100% - 41px);text-align: left;}
+.table_grouptrIMG1 p span{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;display: block;color: #333;line-height: 13px}
+.table_grouptrIMG1 time{color: #a0a0a0;font-size: 12px}
+/*union audit history*/
+.enterAudit-historyList .table_group{background: #fff;margin-top: 10px}
+.enterAudit-historyList .table_line{ }
+.enterAudit-historyList .table_line li:first-child{flex: 2.22}
+.enterAudit-historyList .table_line li:nth-child(2){flex: 1}
+.enterAudit-historyList .table_line li:nth-child(3){flex: 0.8}
+.enterAudit-historyList .table_line li:last-child{flex: 0.8}
+.enterAudit-historyList .table_grouptr li:nth-child(2){line-height: 60px}
+.enterAudit-historyList .table_grouptr li:nth-child(3){line-height: 60px}
+.enterAudit-historyList .table_grouptr li:last-child{line-height: 60px}
+
+.admin_tabWrapper{margin-top: 16px}
+.admin_groups{display: flex;flex-direction: column;background: #fff}
+.admin_groups figure{display: flex;flex-direction: row;padding: 8px 1rem;border-bottom: 1px solid #e5e5e5;align-items: center;}
+.admin_groups figure:last-child{border-bottom: none}
+.admin_groups figure > img{width: 36px;height: 36px;border-radius: 18px;margin-right: 8px}
+.admin_groups figure > figcaption{width: calc(100% - 54px);width: -webkit-calc(100% - 54px);width: -moz-calc(100% - 54px);width: -o-calc(100% - 54px);}
+.admin_groups figure h3{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100%;font-size: 1.3rem}
+.admin_mainGroup{display: inline-block;margin-right: 5px;border-radius: 3px;background: #f2572d;color: #fff;padding: 0px 5px;font-size: 12px}
+
+/*union staticstics;*/
+.statistics_top{background: #fff;display: flex;flex-direction: column;align-items: stretch;}
+.statistics_top > ul{display: flex;flex-direction: row;justify-content: space-between;align-items: center;border-bottom:1px solid #dcdcdc;padding:16px 1rem }
+.statistics_top > ul:last-child{border-bottom: none}
+.statistics_top > ul > li:last-child{border-right: none}
+.statistics_top > ul > li{flex: 1;overflow: hidden;text-align: center;border-right: 1px solid #e5e5e5}
+.statistics_top p,.statistics_top span{font-size: 12px;margin-bottom: 5px}
+.statistics_top b{color: #f16d15;font-size: 1.4rem}
+.statistics_today b{font-weight: normal;color: #00abd8}
+.statistics_tab {margin-top: 16px;background: #fff}
+.statistics_tab .search{background: #f4f5f6;margin: 16px 1rem}
+.statistics_tab .search input{background: #f4f5f6}
+
+.table_line li img{width: 36px;height: 36px;border-radius: 18px;margin: 5px 5px 0}
+.mainGroup_tag{border-radius: 5px;font-size: 12px;padding: 2px 5px;margin-right: 3px;display: inline-block;overflow: hidden;vertical-align: middle;}
+.statistics_tab .table_grouptr li{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-size: 1.2rem}
+#groupStatistics .table_line li:first-child{flex: 1.8}
+#groupStatistics .table_line li:nth-child(2){flex: 1}
+#groupStatistics .table_line li:last-child{flex: 0.8}
+.statistics_tab .table_grouptr li:first-child p{line-height: 1;margin:0 5px 5px;overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+	word-break: break-all;
+}
+.statistics_tab .table_grouptr li:nth-child(2){line-height: 60px;font-size: 12px;line-height: 65px}
+.statistics_tab .table_grouptr li:last-child{line-height: 60px;line-height: 65px}
+ 
+#personalStatistics .table_line li:first-child{flex: 1.5}
+#personalStatistics .table_line li:nth-child(2){flex: 0.8}
+#personalStatistics .table_line li:last-child{flex: 1.2}
+#personalStatistics .table_grouptr li:last-child{;color: #00b0f0}
+
+.statistics_tab .rank{position: absolute;top: 5px;left: 5px}
+.statistics_tab .rank i{font-size: 22px;color: #e45454}
+.groupsEnterList{margin: 16px 1rem;border:1px solid #dcdcdc;border-radius: 5px;background: #fff;}
+.groupsEnterList li{display: flex;flex-direction: row;justify-content: space-between;padding: 8px 10px;border-bottom:1px solid #e5e5e5;}
+.groupsEnterList li:last-child{border-bottom: none}
+.groupsEnterList li > span{flex: 1}
+#groupsEnterPlayer{max-height: 360px;overflow-y:scroll;}
+
+.union_advantages{margin: 16px 1rem;display: flex;flex-direction: column;align-items: stretch;}
+.union_advantages li{
+	margin-bottom: 16px;
+	background: #fff;
+	/*height: 54px;*/
+	overflow: hidden;
+	text-align: center;
+	padding:10px;
+	border-radius: 10px
+}
+.union_advantages li h3{color: #00abd8;font-size: 1.4rem;font-weight: bold;margin-bottom: 5px}
+.union_advantages li h4{font-size: 12px}
+
+/*群名片*/
+.groupCardintro{background: #fff;margin-top: 16px;}
+.groupCardintro li{padding: 10px 1rem;border-bottom:1px solid #e5e5e5;display: flex;flex-direction: row;align-items: center}
+.groupCardintro li:last-child{border-bottom:none;}
+.groupCardintro li b{font-weight: normal;color: #333}
+.card_statistics{background: #fff;margin-top: 16px}
+.card_statistics ul.sumNum{border-top:1px solid #dcdcdc;padding: 16px 1rem;display: flex;flex-direction: row;align-items: center}
+.card_statistics ul.sumNum > li{flex: 1;border-right: 1px solid #e5e5e5;display: flex;flex-direction: row;align-items: center;padding-right: 16px}
+.card_statistics ul.sumNum > li:last-child{border-right: none;padding-right: 0}
+.card_statistics ul.sumNum > li h3{flex: 1;text-align: center;}
+.card_statistics ul.sumNum > li h3 p{color: #f16d15;font-size: 1.8rem}
+.card_statistics ul.detailsNum{flex: 0.6;font-size:1.2px;color: #333}
+.card_statistics ul.detailsNum b{font-weight: normal;margin-right: 8px}
+

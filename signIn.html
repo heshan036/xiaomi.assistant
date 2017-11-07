@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/signIn.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/signIn.js"></script>
+	<title>群签到</title>
+	<style>
+		body{padding-bottom: 72px}
+	</style>
+</head>
+<body>
+	<header class="sign_header">
+		<div class="sign_statics">
+			<div class="header_left">
+				<i class="fillfont icon-volume_"></i>
+				<h2>当日签到总人数 <span class="c-orange">2</span> </h2>
+				<h3>您今天签到排名：<span class="c-orange">2</span></h3>
+			</div>
+		</div>
+		<div class="signIn_act">
+			<a href="javascript:void(0)" class="btn_orange">点击签到</a>
+			<p>累计签到：<span>2</span> 天</p>
+		</div>
+	</header>
+
+	<section class="sign_content">
+		<h2><span>本月排名</span><i class="fillfont icon-sanjiaoxing-xia"></i></h2>
+		<ul class="h_chose">
+			<li>本月排名</li>
+			<li>上月排名</li>
+		</ul>
+		<div class="ranktop">
+			<ul class="ranktop_tabT">
+				<li class="active">活跃度</li>
+				<li>加速度</li>
+<!-- 				<li>毅力榜</li> -->
+			</ul>
+			<div class="ranktop_tabC">
+				<!-- 活跃榜start -->
+				<div class="panel">
+					<ul class="ranktop">
+						<li>
+							<h2><img src="images/pic1.png"></h2>
+							<p>果果</p>
+							<p class="c-orange">5天</p>
+						</li>
+						<li>
+							<h2><img src="images/pic.png"></h2>
+							<p>雨欣</p>
+							<p class="c-orange">6天</p>
+						</li>
+						<li>
+							<h2><img src="images/pic2.png"></h2>
+							<p>古月哥欠</p>
+							<p class="c-orange">4天</p>
+						</li>
+					</ul>
+					<section class="rank_table">
+						<h2>您总共累计签到<span>1</span>天，现在活跃度排名：<span>2</span></h2>
+						<div class="table_group">
+							<ul class="table_groupth table_line">
+								<li>名次</li>
+								<li>姓名</li>
+								<li>累计签到天数</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>1</li>
+								<li><img src="images/pic.png"><p>名字</p></li>
+								<li>5天</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>2</li>
+								<li><img src="images/pic.png"><p>名字</p></li>
+								<li>5天</li>
+							</ul>
+						</div>
+					</section>
+				</div>
+				<!-- 活跃榜end 神速榜start -->
+				<div class="panel none">
+					<ul class="ranktop">
+						<li>
+							<h2><img src="images/pic.png"></h2>
+							<p>雨欣</p>
+							<p class="c-orange">飞鹰</p>
+						</li>
+						<li>
+							<h2><img src="images/pic.png"></h2>
+							<p>果果</p>
+							<p class="c-orange">雄鹰</p>
+						</li>
+						<li>
+							<h2><img src="images/pic.png"></h2>
+							<p>古月哥欠</p>
+							<p class="c-orange">雏鹰</p>
+						</li>
+					</ul>
+					<section class="rank_table">
+						<h2>您签到速度是<span>萌兔</span>天，现在神速榜排名：<span>2</span></h2>
+						<div class="table_group">
+							<ul class="table_groupth table_line">
+								<li>名次</li>
+								<li>姓名</li>
+								<li>签到速度</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>1</li>
+								<li><img src="images/pic.png"><p>名字</p></li>
+								<li>闪电侠</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>2</li>
+								<li><img src="images/pic.png"><p>名字</p></li>
+								<li>猎豹</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>2</li>
+								<li><img src="images/pic.png"><p>名字</p></li>
+								<li>猎豹</li>
+							</ul>
+							<ul class="table_grouptr table_line">
+								<li>2</li>
+								<li><img src="images/pic.png"><p>名字</p></li>
+								<li>萌兔</li>
+							</ul>
+						</div>
+					</section>
+				</div>
+				<!-- 神速榜end-->
+			</div>
+		</div>
+	</section>
+
+<footer class="footer">
+		<div class="footer_home active" onclick="window.location.href='index.html'">
+			<p><i class="fillfont icon-home"></i></p>
+		</div>
+		<ul>
+			<li onclick="window.location.href='group.html'">
+				<i class="fillfont icon-group"></i>
+				<p>群成员</p>
+			</li>
+			<li onclick="window.location.href='mine.html'">
+				<i class="fillfont icon-user"></i>
+				<p>我的</p>
+			</li>
+		</ul>
+	</footer>
+</body>
+<script>
+$(function(){
+	var layer1= layer.open({
+      type: 2,
+      title: '版本更新',
+      shadeClose: true,
+      shade: false,
+      maxmin: true, //开启最大化最小化按钮
+      area: ['320px', '195px'],
+      content: 'versionUpdate.html'
+    });
+    layer.full(layer1);
+})
+</script>
+</html>

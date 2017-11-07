@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/union.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>群联盟</title>
+	<style>
+		.union_advantages li h4,.union_advantages li p{text-align: left}
+		.unionList{background: #fff;padding-top: 1px}
+		.buyOparate > p{padding: 10px 1rem 5px;font-size: 13px}
+		.unionList{border-top: none}
+		.union_advantages{margin: 16px 1rem 0;}
+	</style>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>群联盟</h1>
+		<a href="index.html"><i class="fillfont icon-icon1"></i></a>
+	</header>
+	
+	<img src="images/union_banner.png" alt=""  class="w">
+	
+	<ul class="union_advantages">
+		<li>
+			<hgroup>
+				<h3><span class="serialNum">1、</span>联盟介绍</h3>
+				<h4>群联盟是一款专业的多群管理工具，支持消息、预设回复、课程资料（如入群欢迎语、关键词、群精华等）多群共享；多群成员去重及黑名单共享。</h4>
+				<!-- <p class="c-blue">(注：课程共享需购买内容模块、去重及黑名单需购买护群模块)</p> -->
+				<p class="mt20 c-blue" style="font-size:12px">哪些群需要联盟？<a href="" class="c-blue fr">查看详细 》</a></p>
+			</hgroup>
+		</li>
+		<li>
+			<hgroup>
+				<h3><span class="serialNum">2、</span>联盟特权</h3>
+				<h4>进入联盟专属服务群，获得优质服务<br>每周大咖分享，免费学习盈利模式<br>联盟被推荐</h4>
+			</hgroup>	
+		</li>
+	</ul>
+
+	
+	<div class="buyOparate">
+		<p class="c-88">请在下方选择您需要开通的群，点击“开通联盟”即可。</p>
+		<div class="unionList">
+			<div class="search">
+				<a href="javascript:"><i class="fillfont icon-search"></i></a>
+				<input type="text" placeholder="请输入空间群名称">
+			</div>
+			<div class="unionList-item">
+				<figure onclick="openunionInfo(this);">
+					<img src="images/pic.png" alt="">
+					<h3>社群社群</h3>
+				</figure>
+				<p onclick="enterUnion(this);"><span class="btn_blue">开通联盟</span></p>
+			</div>
+			<div class="unionList-item">
+				<figure onclick="openunionInfo(this);">
+					<img src="images/pic.png" alt="">
+					<h3>社群社群</h3>
+				</figure>
+				<p onclick="enterUnion(this);"><span class="btn_blue">开通联盟</span></p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

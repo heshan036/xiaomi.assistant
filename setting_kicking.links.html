@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+	<style>
+		.keyword-item a.active{color: #e60012}
+	</style>
+</head>
+<body class="pt pb">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>链接踢人</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+	
+	<section class="h2-sec">
+		<h2>链接踢人规则：</h2>
+		<div class="keywordsRule">
+			<p>管理员可设置禁止在群内发送的链接地址，群内成员触发禁止链接，管家将发送警告或被管家移出群外<small>(注：敏感词汇可选择模糊匹配或精准匹配)</small></p>
+			<ul>
+				<li><label><input type="radio" name="kickRule">仅用于警告</label></li>
+				<li><label><input type="radio" name="kickRule" checked>第一次警告，第二次踢出</label></li>
+				<li><label><input type="radio" name="kickRule">直接踢出</label></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="h2-sec">
+		<h2>链接列表</h2>
+		<div class="keyword-item">
+			<header class="flexBox">
+				<a onclick="openUnion(this)" class="active"><i class="fillfont icon-power mr5" style="font-size:16px"></i>群联盟</a>
+				<a onclick="delItem(this);" class="union_btn"><i class="fillfont icon-lajitong"></i>删除</a>
+			</header>
+			<textarea rows="1">链接1</textarea>
+		</div>
+		<div class="keyword-item">
+			<header class="flexBox">
+				<a onclick="openUnion(this)"><i class="fillfont icon-power mr5" style="font-size:16px"></i>群联盟</a>
+				<a onclick="delItem();"><i class="fillfont icon-lajitong"></i>删除</a>
+			</header>
+			<textarea rows="1">链接2</textarea>
+		</div>
+	</section>
+
+	<footer class="footer_btn">
+		<a onclick="showlinkLayer();"><i class="linefont icon-iconfonticonfontunie0471 mr5"></i>添加链接</a>
+	</footer>
+	
+	<!--  选择添加链接方式弹窗-->
+	<ul id="chosetypePup" class="pupbox none">
+		<li class="checkWrapper"><input type="radio" name="choseType" id="choseInput" checked><label for="choseInput">手动输入链接</label></li>
+		<li class="checkWrapper"><input type="radio" name="choseType" id="choseGet"><label for="choseGet">获取链接</label></li>
+	</ul>
+	
+	<!-- 输入链接弹窗 -->
+	<div id="inputLinks" class="none">
+		<figure>
+			<img src="images/pic.png" alt="">
+			<p>请上传图片</p>
+		</figure>
+		<input type="text" placeholder="输入链接标题">
+		<input type="text" placeholder="输入链接地址,如：http://www.mmmee.cn">
+		<textarea name="" id="" cols="30" rows="3" placeholder="输入链接描述"></textarea>
+	</div>
+
+	<!-- 获取链接弹窗 -->
+	<div id="linksChosewrapper" class="linksChosewrapper none">
+		<div class="form_whiteline">
+			<p>链接加入群ID<i class="fillfont icon-icon-question"></i></p>
+			<input type="checkbox" class="switch">
+		</div>	
+		<section class="h2-sec linksChoseBox">
+			<h2>设置链接方式</h2>
+			<div class="linksListCon">
+				<p>1、群主将链接分享给本群小管家</p>
+				<p>2、在群内发送连接</p>
+				<p class="c-r3">注：以下情况，链接将不能被记录：<br>1、用PC版微信分享链接给小管家<br>2、页面未加载或分享给小管家</p>					
+			</div>
+			<h2>群链接列表 <a class="fr c-blue" style="font-size:12px" onclick="getLinks();"><i class="fillfont icon-icon19 mr5"></i>刷新</a></h2>
+			<div class="linksListCon">
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+				<label class="linkItem">
+					<figure><img src="images/kx-default.jpg" alt=""><figcaption><h3>手机快讯</h3><h4>集团快讯</h4></figcaption></figure>
+					<input type="checkbox" name="linkItem">
+				</label>
+			</div>
+		</section>
+		<ul class="editBtns">
+			<li><input type="checkbox" class="mr5">全选</li>
+			<li><i class="fillfont icon-lajitong"></i>删除链接</li>
+		</ul>
+	</div>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/insertmedia.js"></script>
+<script>
+	function delItem(obj){
+		layer.confirm('确定删除本条链接？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(){
+		  layer.msg('删除成功', {icon: 1});
+		}, function(){
+			//取消
+		});
+	}
+
+	function openUnion(obj){
+		$(obj).toggleClass('active')
+	}
+
+</script>
+</html>

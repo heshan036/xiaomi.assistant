@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/union.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<title>入盟审核记录</title>
+</head>
+<body class="pt pb">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>入盟审核记录</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<section class="h2-sec mt5">
+		<h2>入盟审核</h2>
+		<div class="enterAudit-historyList">
+			<div class="table_group" style="margin-top:0">
+				<ul class="table_groupth table_line">
+					<li>群名称</li>
+					<li>入盟费<small>（元）</small></li>
+					<li>留言</li>
+					<li>操作</li>
+				</ul>
+				<ul class="table_grouptr table_line">
+					<li class="table_grouptrIMG1"><img src="images/pic.png"><p><span>名名字名字名字名字名字字</span><time>2017-01-01</time></p></li>
+					<li>100000</li>
+					<li class="c-blue" onclick="groupInfoLayer(this);">详情</li>
+					<li>已同意</li>
+				</ul>
+				<ul class="table_grouptr table_line">
+					<li class="table_grouptrIMG1"><img src="images/pic.png"><p><span>名名字名字名字名字名字字</span><time>2017-01-01</time></p></li>
+					<li>100000</li>
+					<li class="c-blue" onclick="groupInfoLayer(this);">详情</li>
+					<li class="c-r3">已拒绝</li>
+				</ul>
+				<p class="tc c-blue p10" id="loadMore">点击加载更多...</p>
+			</div>
+		</div>
+	</section>
+
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+
+	//显示群留言详情
+	function groupInfoLayer(obj){
+		var msg="12533";
+		var str ='<p class=\"tc\" style=\"padding:20px 1rem\">'+msg+'</p>';
+		layer.open({
+			type:1,
+			title:'群留言信息',
+			content:str,
+			scrollbar:false,
+			shadeClose: true, //点击遮罩关闭
+			btn:['确定','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			btn2:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+		})
+	}
+
+	$(window).scroll(function(){
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			if (scrollTop + windowHeight == scrollHeight) {
+				// 此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+				$("#loadMore").html('加载中...')
+				console.log(12)
+			}
+	});
+</script>
+</html>

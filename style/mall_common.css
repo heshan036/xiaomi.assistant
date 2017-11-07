@@ -1,0 +1,12 @@
+@import url(iconfont.css);
+body{background: #f4f4f4;font-family:'Microsoft YaHei', '微软雅黑';}
+
+.mall_footer{height: 1.28rem;position: fixed;z-index: 1000;left:0;bottom: 0;right: 0;color: #f1f8fe;display: flex;flex-direction: row;justify-content:space-between;align-items: center;}
+.mall_footer a{width: 20%;text-align: center;display:block;}
+.mall_footer i{color: #666666}
+.mall_footer p{color: #212121;}
+
+
+ .swiper-container-horizontal>.swiper-pagination-bullets{position: absolute;bottom: 0.18rem;left: 50%;transform: translateX(-50%);z-index: 101;}
+.swiper-container-horizontal>.swiper-pagination-bullets span{width: 7px;height: 7px;border-radius: 50%;margin:0 5px;background: #666666;}
+.swiper-container-horizontal>.swiper-pagination-bullets span.swiper-pagination-bullet-active{background: #3b76d8}

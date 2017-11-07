@@ -1,0 +1,104 @@
+.essence_header{background: #fff;padding: 1rem;display: flex;flex-direction: row;}
+.essence_header p{flex: 3;font-size: 1.3rem;position: relative;padding-left:2.4rem }
+.essence_header p i{font-size: 2.4rem;color: #00b0f0;position: absolute;left: 0;top: 50%;transform: translateY(-50%);}
+.essence_header p span{color: #f2572d}
+.essence_header a#public-Btn{flex:1.5;}
+.essence_header a{flex: 1.5;text-align: right;font-size: 1.2rem;color: #00abd8}
+.essence_header a i{font-size: 12px;color: #00abd8}
+
+.essenceList{padding: 0}
+.essenceItem{background: #fff;padding:10px 1rem;display: flex;flex-direction: row;justify-content: space-between;margin-bottom: 10px}
+.essenceItem > img{border:1px solid #e5e5e5;border-radius: 2px;width: 48px;height: 48px;}
+.essence_itemCon{flex: 4;position: relative;padding-left: 10px;font-size: 1.2rem}
+.essence_itemCon h2{font-size: 1.4rem;color: #333;line-height: 1.5}
+.essence_itemCon .essence_itemdetail{margin: 5px 0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;}
+.essence_itemCon .essence_itemdetail.link{background: #eee;padding:10px;color: #333;font-size: 1.4rem}
+.essence_itemCon time{color: #a0a0a0}
+.essence_itemCon .linefont{display: inline-block;transform: rotate(270deg);margin-right: 10px;vertical-align: middle;color: #00abd8;font-size: 2rem}
+.essence_itemCon > a{position: absolute;top: 0;right: 0;color: #fff;padding: 2px 8px;border-radius: 3px;background: #f2572d;z-index: 99}
+.essence_itemCon > a.disabled{background:#c9c9c9;}
+
+/*群精华筛选*/
+.essence_choset{margin: 10px 0;}
+.essence_choset h2{font-size: 1.2rem;padding: 0 1rem;margin-bottom: 10px} 
+.essence_choset .set_time{height: 48px;line-height: 48px;color: #333;padding: 0 1rem;border-bottom: 1px solid #e5e5e5;background: #fff;position: relative;}
+.essence_choset .set_time span{display: block;}
+.essence_choset .set_time input{color: #666;background: url(../images/right_arrow.png) 96% center no-repeat;background-size: 7px;text-align: right;position: absolute;height: 100%;left: 0;top: 0;z-index: 1;width: 100%;padding-right: 8%;box-sizing: border-box;}
+.essence_choset .btn_block{margin: 16px 1rem}
+
+
+/*群聊精华详情*/
+.tabC{background: #fff;padding: 10px 1rem;/*overflow-y: scroll;position: fixed;z-index: 100;left: 0;right: 0*/}
+.editChat{margin-top: 44px;}
+.chatItem.active:before{content: "";display: block;background: rgba(255,255,255,0.5);position: absolute;top: 0;left:0;width: 100%;height: 100%;z-index: 10}
+.delmode figure.chatItem.active a i{color: #666}
+.delmode figure.chatItem a i{font-size: 2rem;color: #00abd8}
+.chosemode figure.chatItem a i{font-size: 1.6rem;color: #666}
+.chosemode figure.chatItem.active a i{color: #f2572d}
+figure.chatItem{display: flex;flex-direction: row;margin-bottom: 10px;position: relative;}
+figure.chatItem > img{width: 36px;height: 36px;border-radius: 2px;border:1px solid #dcdcdc;}
+figure.chatItem > a{text-align: center;line-height: 2;position: absolute;z-index: 11;width:40px;right:0;top:0}
+figure.chatItem figcaption{margin-left: 5px;flex: 4;font-size:1.2rem;max-width:calc(100% - 88px)}
+figure.chatItem figcaption p{color: #333;display: inline-block;padding: 5px 10px;margin-top: 5px;background: #f3f4f7;line-height: 1.5;position: relative;margin-left: 5px;border-radius: 3px;}
+figure.pullRight figcaption p img{max-width: 100%}
+figure.chatItem figcaption p span{font-size: 13px;word-break: break-all;line-height: 24px}
+figure.chatItem figcaption p span.folder{overflow: hidden;-webkit-line-clamp:3;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;}
+figure.chatItem figcaption p:before,figure.chatItem .linkItem:before{content: "";display: block;position: absolute;right: 100%;top: 10px;border:5px solid transparent;border-right-color: #eee;transform: translateY(-50%);}
+figure.chatItem .linkItem{margin-left: 5px;margin-top: 5px;border-radius: 3px;overflow:initial;margin-right: 40px;position:relative}
+figure.chatItem figure.linkItem h3{top:5px;}
+figure.chatItem figure.linkItem a{
+	position: relative;
+	line-height: auto;
+	text-align: left;
+    font-size: 14px;
+    color: #212121;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: none;
+    padding: 0;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    background: none;
+    width: calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: -o-calc(100% - 20px);
+    width: -ms-calc(100% - 20px);
+}
+figure.chatItem p .folderParam{display: block;text-align: center;padding: 3px 0}
+figure.chatItem p .folderParam i{font-size: 14px;color: #a0a0a0}
+.chatComment{margin-top: 16px;}
+.chatBtn-group{display: flex;flex-direction: row;align-items: center;background: #fff;height: 40px;line-height: 40px}
+.chatBtn-group a{flex: 1;text-align: center;position: relative;color: #00abd8}
+.chatBtn-group a:after{content: "";display: block;width: 1px;height: 20px;background: #dcdcdc;position: absolute;top: 10px;left:100%;z-index: 9}
+.chatBtn-group i{margin-right: 5px}
+.essence_itemcomment{margin: 16px 1rem;background: #fff;padding:8px 10px;border-radius:3px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;position: relative;}
+.essence_itemcomment .essence_itemLike{border-bottom: 1px solid #e5e5e5;padding-bottom:5px;}
+.essence_itemcomment .essence_itemLike li{float: left;margin: 2px;font-size: 1.3rem;color: #00abd8}
+.essence_itemcomment .essence_itemLike li i{margin-right: 2px;}
+.essence_itemcomment b{font-weight: normal;}
+.essence_itemcomment .essence_itemcomm{margin-top: 10px}
+.essence_itemcomment .essence_itemcomm li{margin: 10px 0;font-size: 1.3rem;color: #333;border-bottom:1px dashed #e5e5e5;padding-bottom:8px;display: flex;flex-direction: row;}
+.essence_itemcomment .essence_itemcomm b{color: #00abd8;flex: 1;text-align: left;}
+.essence_itemcomment .essence_itemcomm span{flex: 6}
+.essence_itemcomment .essence_itemcomm a{flex: 1;text-align: right;line-height: 1}
+.essence_itemcomment .essence_itemcomm a i{font-size: 2rem;color:#a0a0a0 }
+.essence_itemcomment:before{position: absolute;bottom: 100%;left:10px;content: "";display: block;border:8px solid transparent;border-bottom-color: #fff;}
+
+/*右边聊天显示，加上样式pullRight*/
+figure.pullRight figcaption{margin-left:0;margin-right: 5px}
+.pullRight {text-align: right;}
+figure.pullRight figcaption p{margin-left: 0;margin-right: 5px}
+figure.pullRight figcaption p:before{border-left-color: #eee;border-right-color: transparent;left:100%;}
+
+/*如果对话是语音，加上样式audio，通过width控制宽度*/
+figure.chatItem figcaption p.audio{height: 19px;line-height: 19px;text-align: left;width: 20px}
+figure.chatItem figcaption p.audio i{color: #333;vertical-align: baseline;font-size: 1.6rem}
+
+
+
+
+
+

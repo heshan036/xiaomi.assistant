@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+</head>
+<body style="padding-top:44px;margin-bottom:56px">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>群有权发布奖励设置</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<p class="note_grayBg">群成员没发表一条动态进行激励奖励</p>
+
+	<div class="form_whiteline flexBox" id="publicReward"><span>奖励金币</span><label><input type="input" class="normal_input" value="0" style="float:none;margin-right:5px">金</label></div>
+	<p style="padding:5px 1rem">金币余额：<span class="c-r3">0</span> &nbsp;&nbsp;可用金币：<span class="c-r3">10</span></p>
+
+	<a href="#" class="btn_block">提交</a>
+
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$(function(){
+		//发表留言弹窗	
+		$("#addwel-btn").on("click",function(){
+			layer.open({
+				type:1,
+				title:'添加欢迎语',
+				shadeClose: true, //点击遮罩关闭
+				content: $("#addWelcome"),
+				btn:['确定','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+					layer.close(index);
+				},
+				cancel:function(index,layero){
+					//按钮【取消】的回调
+					console.log("取消")
+				}
+			})
+		})
+	})
+
+	// 是否禁止欢迎语
+	function isforbid(obj){
+		$(obj).toggleClass("forbid_welcome") //如果禁止添加forbid_welcome的样式
+	}
+	//删除欢迎语
+	function delItem(obj){
+		layer.confirm(
+			'确定删除本条欢迎语？', {btn: ['确定','取消']},
+			function(){
+		 		layer.msg('删除成功', {icon: 1});
+			}, function(){
+			//取消
+		})
+	}
+
+</script>
+</html>

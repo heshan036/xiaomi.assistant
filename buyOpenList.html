@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/buyAndOpen.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+	<title>小蜜助手开通</title>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>开通列表</h1>
+		<a href="index.html"><i class="fillfont icon-icon1"></i></a>
+	</header>
+
+	<section class="h2-sec">
+		<h2>选择开通管家列表</h2>
+		<section class="openList">
+			<h3 onclick="folederItem(this)">购买日期：<span>2017-07-01</span><a class="btn_blue" onclick="openOparete();">开通</a></h3>
+			<ul class="openCon">
+				<li style="padding-bottom:0"><span class="spanGray">基础版块</span></li>
+				<li class="c-r1">可开通数：<span>1个</span></li>
+			</ul>
+		</section>
+		<section class="openList">
+			<h3 onclick="folederItem(this)">购买日期：<span>2017-07-01</span><a class="btn_blue" onclick="openOparete();">开通</a></h3>
+			<ul class="openCon">
+				<li style="padding-bottom:0"><span class="spanGray">基础版块</span></li>
+				<li class="c-r1">可开通数：<span>1个</span></li>
+			</ul>
+		</section>
+		<p class="tc c-blue p10" id="loadMore">点击加载更多</p>
+	</section>	
+	
+
+</body>
+<script>
+	function openOparete(){
+		var msgstr='<div class="main_content"><p>扫描二维码，加为好友，按照提示操作，点击助手推送的开通链接，即可开通空间。</p><p class="tc mt10"><img src="images/erweima.png" width="50%"></p></div>'
+		var msgLayer=layer.open({
+				type:1,
+				title:'开通小蜜COCO',
+				content:msgstr,
+				scrollbar:false,
+				shadeClose: true, //点击遮罩关闭
+				btn:['确认','取消'],
+				yes:function(index,layero){
+					//按钮【确定】的回调
+					layer.close(msgLayer);
+				},
+				btn2:function(index,layero){
+					//按钮【确定】的回调
+					layer.close(msgLayer);
+				}
+			})
+		event.stopPropagation();
+	}
+
+	function folederItem(obj){
+		$(obj).siblings("ul").toggle()
+	}
+
+	var loadEnd=false;
+	//滑动到页面底部加载更多
+	$(window).scroll(function(){
+		var scrollTop = $(this).scrollTop();
+		var scrollHeight = $(document).height();
+		var windowHeight = $(this).height();
+		if (!loadEnd&&(scrollTop + windowHeight == scrollHeight)) {
+			// 此处是滚动条到底部时候触发的事件，在这里写要加载的数据，或者是拉动滚动条的操作
+			$("#loadMore").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;加载中...')
+		}
+	});
+	
+	$(function(){
+		$("#loadMore").click(function(){
+			if(!loadEnd){
+				$("#loadMore").html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;加载中...')
+				getMore();
+			}
+		})
+	})
+
+</script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/data.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/data.js"></script>
+	<title>群数据</title>
+
+</head>
+<body style="padding-top:44px">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>潜水成员查询统计</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+
+	<div class="divemember_top">
+		<span>查看连续潜水</span>
+		<input type="number" value="7" id="inquireDay" autofocus>
+		<span>天的成员</span>
+		<a href="#" id="query">查询</a>
+	</div>
+
+	<div class="divemember_con">
+		<div class="table_group">
+			<ul class="table_groupth table_line">
+				<li><!-- <input type="checkbox" name="tr_all" id="choseAll"> --></li>
+				<li>访问人员</li>
+				<li>日期</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><span>名字</span></li>
+				<li>2017-01-01</li>
+			</ul>
+			<ul class="table_grouptr table_line">
+				<li><input type="checkbox" name="tr_item"></li>
+				<li><img src="images/pic.png"><span>名字</span></li>
+				<li>2017-01-01</li>
+			</ul>
+		</div>
+	</div>
+
+	<footer class="divemember_footer">
+		<a href="#">@潜水成员</a>
+		<a href="#" class="divemember_footerbtn2"><i class="fillfont icon-yaoqing"></i>批量踢出</a>
+		<a href="#" class="divemember_footerbtn3"><i class="linefont icon-jinggao"></i>批量警告</a>
+	</footer>
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+	$(function(){
+		// 潜水查询不可为0
+		$("#query").click(function(){
+			var inquireDay=$("#inquireDay").val();
+			if(inquireDay == 0){
+				layer.open({
+					type:1,
+					title:false,
+					shadeClose: true, //点击遮罩关闭
+					content: '\<\div style="padding:40px 20px;">查询天数不可为0,请重新输入\<\/div>',
+					btn:['确定','取消'],
+					yes:function(index,layero){
+						//按钮【确定】的回调
+						layer.close(index)
+					},
+					cancel:function(index,layero){
+						//按钮【取消】的回调
+						console.log("取消")
+					}
+				})
+				return false
+			}
+		})
+
+	})
+</script>
+</html>

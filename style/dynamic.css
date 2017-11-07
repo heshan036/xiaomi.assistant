@@ -1,0 +1,62 @@
+.dynamic_header{background: #fff;padding: 1rem;display: flex;flex-direction: row;}
+.dynamic_header p{flex: 3;font-size: 1.3rem;position: relative;padding-left:2.4rem }
+.dynamic_header p i{font-size: 2.4rem;color: #00b0f0;position: absolute;left: 0;top: 50%;transform: translateY(-50%);}
+.dynamic_header p span{color: #f2572d}
+.dynamic_header a{flex: 1;text-align: center;font-size: 1.2rem;color: #00abd8}
+.dynamic_header a i{font-size: 12px;color: #00abd8}
+
+.dynamic_lists{padding-bottom: 72px}
+.dynamic_item{background: #fff;padding:10px 1rem;display: flex;flex-direction: row;justify-content: space-between;margin-top: 10px;position: relative;}
+.dynamic_item > img{border:1px solid #e5e5e5;border-radius: 2px;width: 48px;height: 48px;/*flex: 1*/}
+.dynamic_item .dynamic_itemFl{flex: 4;position: relative;padding-left: 10px;font-size: 1.2rem}
+.dynamic_itemCon h2{color: #333;font-size: 1.6rem;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.dynamic_itemCon .dynamic_itemdetail{margin: 5px 0;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;}
+.dynamic_itemCon .dynamic_itemdetail.link{background: #eee;padding:2px 5px}
+.dynamic_itemCon time{color: #a0a0a0}
+.dynamic_itemCon > a.item_knowbtn{position: absolute;top: 0;right: 0;color: #fff;padding: 2px 8px;border-radius: 3px;background: #f2572d;z-index: 1000;}
+.dynamic_itemCon > a.item_knowbtn.disabled{background:#c9c9c9;}
+.dynamic_itemConB {display: flex;flex-direction: row;justify-content: space-between;align-items: center;position: relative;}
+.dynamic_itemConB a.item_commentbtn{position: relative;z-index: 1000;color: #c9c9c9;font-size: 1.4rem}
+.dynamic_itemConB .item_commentPup{position: absolute;bottom:0;right: 1.6rem;background: #333;border-radius: 3px;padding: 5px 10px;color: #fff;}
+.dynamic_itemConB .item_commentPup a{margin: 5px}
+.dynamic_itemcomment{margin: 8px 0;background: #eee;padding: 5px;border-radius:3px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box}
+.dynamic_itemcomment .dynamic_itemLike{border-bottom: 1px solid #e5e5e5;padding-bottom:5px;}
+.dynamic_itemcomment .dynamic_itemLike li{float: left;margin: 2px;font-size: 1.2rem;color: #66a8c0}
+.dynamic_itemcomment .dynamic_itemLike li i{margin-right: 2px;}
+.dynamic_itemcomment b{font-weight: normal;}
+.dynamic_itemcomment .dynamic_itemcomm li{margin: 5px 0;font-size: 1.2rem;color: #666}
+.dynamic_itemcomment .dynamic_itemcomm b{color: #66a8c0;margin-right: 5px}
+
+/*发布个人动态*/
+.dynamic_issue{}
+.dynamic_issueTop{background: #fff;padding: 10px 1rem;}
+.dynamic_issueTop > textarea{width: 100%;color: #666;font-size: 1.4rem}
+.pic_add{margin-top: 10px}
+.pic_add img{}
+.pic_add a ,.pic_add img{border:1px solid #dcdcdc;height: 48px;width: 48px;display: inline-block;}
+.pic_add a{text-align: center;line-height: 48px;color: #b5b5b5;}
+.pic_add a i{font-size: 20px}
+.btn_block{margin:30px 1rem;}
+
+#setwardWrapper{padding: 10px 1rem}
+.pupbox > p{padding: 10px 1rem;line-height: 1.5;border-bottom: 1px solid #dcdcdc;text-indent: 2em}
+.set_award{display: flex;flex-direction: row;padding: 10px 0;}
+.set_award h3{text-align: right;flex: 1;color: #333}
+.set_award .set_awardIn{text-align: left;flex: 2;}
+.set_awardIn input{height: 22px;width: 48px;background: #eee;margin: 0 3px;text-align: center;color: #333}
+.set_awardIn p:last-child{color: #a0a0a0;margin-top: 5px;font-size: 1.2rem}
+
+
+/*筛选动态*/
+.dynamic_choset{margin: 10px 0;}
+.dynamic_choset h2{font-size: 1.2rem;padding: 0 1rem;margin-bottom: 10px} 
+.dynamic_choset .set_time{height: 48px;line-height: 48px;color: #333;padding: 0 1rem;border-bottom: 1px solid #e5e5e5;background: #fff;position: relative;}
+.dynamic_choset .set_time span{display: block;}
+.dynamic_choset .set_time input{color: #666;background: url(../images/right_arrow.png) 96% center no-repeat;background-size: 7px;text-align: right;position: absolute;height: 100%;left: 0;top: 0;z-index: 1;width: 100%;padding-right: 8%;box-sizing: border-box;}
+.dynamic_choset .btn_block{margin: 16px 1rem}
+
+
+
+
+
+

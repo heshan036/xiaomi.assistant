@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/steward.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群管家</title>
+</head>
+<body class="pt">
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>如何设置关键词</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+	
+	<article class="txtPage">
+		<h2>关键词使用说明</h2>
+		<p>关键词是小管家的自动问答功能，设置好关键词后，群内用户@小管家+关键词，小管家即回复关键词指令对应的回答。关键词分为两类，一类需用户自定义添加指令及回答，另一类为官方词库，如笑话、黄历、天气等，只需勾选开启即可。</p>
+		<h3><b>常见问题：</b></h3>
+		<section class="question">
+			<h5>1、如何添加关键词？</h5>
+			<p>在关键词设置页面，点击顶部“添加关键词”或页面中部“关键词列表”的“+关键词”，即可添加关键词指令和回复内容。群内用户@小管家发送的消息中如包含有关键词，小管家则会回复相应内容。回复内容可添加文字、图片、语音、链接，不超过10条。</p>
+			<p>同一回复内容可设置多个关键词，添加时用空格隔开即可。</p>
+		</section>
+		<section class="question">
+			<h5>2、什么是关键词标签？如何将关键词分类？</h5>
+			<p>通过标签设置可以将关键词分类，每一个标签名即关键词类别名。关键词设置页最上方显示标签列表，点击“去设置”可以添加或删除标签。在关键词设置页点击某个标签，能快速显示该标签下的所有关键词。</p>
+			<p>添加关键词时，可设置新的标签或匹配原有标签，则该关键词添加后会显示在该标签下。</p>
+		</section>
+		<section class="question">
+			<h5>3、如何将某个关键词的标签去掉？</h5>
+			<p>从关键词设置主页-关键词标签-去设置，进入标签管理页，可以看到每个标签下的关键词，勾选关键词，再选择“标签—”，保存，即可将关键词从标签移除。</p>
+		</section>
+		<section class="question">
+			<h5>4、怎么让我的管家讲笑话？如何让管家查询天气和黄历？</h5>
+			<p>关键词设置页上方，点击“添加笑话”，勾选添加笑话，在群内@小管家笑话，则小管家会给您讲一个笑话。@管家黄历，可查询当天黄历。（注意一定要@小管家才行）</p>
+		</section>
+		<section class="question">
+			<h5>5、关键词模糊匹配和精准匹配的区别？</h5>
+			<p>精准匹配即关键词需一模一样才会触发回复，如“联盟管理”这个关键词设置为精准匹配，群成员@管家 联盟管理 会触发自动回复，@管家 如何联盟管理就不会触发回复；模糊匹配则只要艾特内容包含有这个关键词就会触发回复。如关键词为“联盟管理”且模糊匹配，@管家如何联盟管理可触发回复，但指令不全时，如@管家联盟则不触发回复。</p>
+		</section>
+		<section class="question">
+			<h5>6、如何添加链接回复？</h5>
+			<p>只有在微信内可打开的链接才能被记录。需群主先将链接私聊发送给该群小管家，再在设置关键词时添加链接</p>
+		</section>
+		<section class="question">
+			<h5>7、关键词回复内容设置如何更改？</h5>
+			<p>关键词设置以后，还可编辑更改内容。首页找到该关键词后，点击下拉按钮展开详情，可进行回复内容编辑及删除。按住回复后的箭头，可进行上下拖动排序，群内回复会按照设置顺序进行发送。</p>
+		</section>
+		<section class="question">
+			<h5>8、如何删除关键词？</h5>
+			<p>点击关键词前面的“○”，勾选后，点击“关键词－”，可删除该关键词。如需大量删除，可点击“关键词列表”前的“○”进行全选，再点击删除。</p>
+		</section>
+		<section class="question">
+			<h5>9、如果我有很多群，要设置一样的关键词，有没有快捷方式？</h5>
+			<p>有两种方式：</p>
+			<p>1、如果这些群都是您开通的，可在任意一个群设置好关键词，在其他每个群进入社群空间的关键词设置页面，点击上方同步他群关键词，可将关键词一键复制过来；</p>
+			<p>2、购买联盟，其他群免费加入这个联盟，则只需要在联盟主群设置关键词，单个关键词设置时勾选“全联盟可见”按钮，或者所有关键词设置后选择列表上方“一键全联盟可见”即可，分群无需设置也能使用。</p>
+		</section>
+	</article>
+
+
+</body>
+</html>

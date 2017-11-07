@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, user-scalable=no" /><!--不允许用户缩放-->
+	<meta content="telephone=no" name="format-detection" /><!--忽略页面中的数字识别为电话号码-->
+	<meta content="yes" name="apple-mobile-web-app-capable" /><!--离线应用的另一个技巧-->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" /><!--指定的iphone中safari顶端的状态条的样式-->
+	<meta name="renderer" content="webkit"><!-- 启用360浏览器的极速模式(webkit) -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- 避免IE使用兼容模式 -->
+	<meta name="HandheldFriendly" content="true"><!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+	<meta name="MobileOptimized" content="320"><!-- 微软的老式浏览器 -->
+	<meta name="full-screen" content="yes"><!-- UC强制全屏 -->
+	<meta name="x5-fullscreen" content="true"><!-- QQ强制全屏 -->
+	<meta name="browsermode" content="application"><!-- UC应用模式 -->
+	<meta name="x5-page-mode" content="app"><!-- QQ应用模式 -->
+	<meta name="msapplication-tap-highlight" content="no"><!-- windows phone 点击无高光 -->	
+	<link rel="stylesheet" type="text/css" href="style/base.css"/>
+	<link rel="stylesheet" type="text/css" href="style/common.css"/>
+	<link rel="stylesheet" type="text/css" href="style/fillfont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/linefont.css"/>
+	<link rel="stylesheet" type="text/css" href="style/setting.css"/>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+    <script src="js/iconfont.js"></script>
+	<title>群设置</title>
+</head>
+<body class="pt pb">
+	
+	<header class="commom_header">
+		<a href="javascript:history.go(-1)"><i class="fillfont icon-arrow_left"></i></a>
+		<h1>关键词踢人</h1>
+		<a href="index.html"><i class="fillfont icon-home"></i></a>
+	</header>
+	
+	<section class="h2-sec">
+		<h2>触发敏感词规则：</h2>
+		<div class="keywordsRule">
+			<p>管理员可设置敏感词汇，群内成员在群聊过程中，推送内容含敏感词汇，发送警告或该用户移除群外<small>(注：敏感词汇可选择模糊匹配或精准匹配)</small></p>
+			<ul>
+				<li><label><input type="radio" name="kickRule">仅用于警告</label></li>
+				<li><label><input type="radio" name="kickRule" checked>第一次警告，第二次踢出</label></li>
+				<li><label><input type="radio" name="kickRule">直接踢出</label></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="h2-sec">
+		<h2>敏感词列表</h2>
+		<div class="keyword-item">
+			<header class="flexBox">
+				<a><i class="fillfont icon-lajitong"></i>删除</a>
+				<a class="keywordEdit" onclick="editItem(this);"><i class="fillfont icon-pen_ mr5"></i>编辑</a>
+				<div class="keyBtns none">
+					<a class="keywordEdit mr5">保存</a>
+					<a class="keywordEdit" onclick="concelEdit(this);">取消</a>
+				</div>
+			</header>
+			<textarea rows="3">敏感词</textarea>
+			<footer class="flexBox">
+				<label><input type="radio" name="keyword-match1">模糊匹配</label>
+				<label><input type="radio" name="keyword-match1">敏感匹配</label>
+			</footer>
+		</div>
+		<div class="keyword-item">
+			<header class="flexBox">
+				<a><i class="fillfont icon-lajitong"></i>删除</a>
+				<a class="keywordEdit" onclick="editItem(this);"><i class="fillfont icon-pen_ mr5"></i>编辑</a>
+				<div class="keyBtns none">
+					<a class="keywordEdit mr5">保存</a>
+					<a class="keywordEdit" onclick="concelEdit(this);">取消</a>
+				</div>
+			</header>
+			<textarea rows="3">敏感词</textarea>
+			<footer class="flexBox">
+				<label><input type="radio" name="keyword-match2">模糊匹配</label>
+				<label><input type="radio" name="keyword-match2">敏感匹配</label>
+			</footer>
+		</div>
+	</section>
+
+	<footer class="footer_btn">
+		<a onclick="addKeyword();"><i class="linefont icon-iconfonticonfontunie0471 mr5"></i>添加关键词</a>
+	</footer>
+
+	
+
+
+</body>
+<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
+<script>
+$(function(){
+	var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+})
+
+	// 添加关键词
+	//发表留言弹窗
+	var txtstr = '<textarea name="" id="" cols="30" rows="6" placeholder="输入关键词"></textarea>';		
+	function addKeyword(){
+		//layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+		layer.open({
+			type:1,
+			title:'添加关键词',
+			shadeClose: true, //点击遮罩关闭
+			content: txtstr,
+			btn:['确定','取消'],
+			yes:function(index,layero){
+				//按钮【确定】的回调
+				layer.close(index);
+			},
+			cancel:function(index,layero){
+				//按钮【取消】的回调
+				console.log("取消")
+			}
+		})
+	}
+
+	 function editItem(obj){
+	 	$(obj).hide().siblings(".keyBtns").show()
+	 	$(obj).parent().siblings("textarea").focus()
+	 }
+	 function concelEdit(obj){
+	 	$(obj).parent(".keyBtns").hide();
+	 	$(obj).parent(".keyBtns").siblings(".keywordEdit").show()
+	 }
+</script>
+</html>
